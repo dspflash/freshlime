@@ -1,0 +1,17 @@
+<GroupBox Name="GBDVmanufacturer" cols="xs12 sm12 md12 lg12"><Ctrls>
+<ListCtrl Name="manufacturer_vLst" ToolTip="ttp_manufacturer" Size="700,420" OnLoad="init" Heading="name,320;image,640;sort_order,20;manufacturer_id,55;" loadedclick="0">
+	<DbDetails >
+<DbTable>freshlime.manufacturer m</DbTable>
+<Index>manufacturer_id</Index>
+<Data>m.name,m.image,m.sort_order,m.manufacturer_id</Data>
+<Order>manufacturer_id</Order></DbDetails>
+<operator refresh="1" firstpage="1" prepage="1" nextpage="1">
+<op text="modify"><DbDetails><Where>manufacturer_id='%{manufacturer_vLst[manufacturer_id]}'</Where></DbDetails><submit namelist="DbDetails" next="$this.manufacturer.manufacturerLst"/></op>
+<op text="delete" needconfirm="1"><DbDetails>
+<DbTable>freshlime.manufacturer</DbTable>
+<Where>manufacturer_id='%{manufacturer_vLst[manufacturer_id]}'</Where>
+<queryFormat>delete from %{table} where %{where}</queryFormat></DbDetails>
+<submit namelist="DbDetails"/><submit/></op>
+</operator>
+</ListCtrl>
+</Ctrls></GroupBox>

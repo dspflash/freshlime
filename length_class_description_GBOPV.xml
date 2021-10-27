@@ -1,0 +1,17 @@
+﻿<GroupBox cols="xs12 sm12 md12 lg12" Name="GBOPVlength_class_description" Size="100,100"><Ctrls>
+<Button Text="delete" ToolTip="ttp_deletelength_class_description" Name="deletelength_class_description" Size="50,20">
+	<OnClick>
+	<DbDetails fcsm="1">
+<DbTable>freshlime.length_class_description</DbTable>
+<Where>language_id='%{length_class_descriptionLst[language_id]}' and length_class_id='%{length_class_descriptionLst[length_class_id]}'</Where>
+<queryFormat>delete from %{table} where %{where}</queryFormat></DbDetails>
+	<submit namelist="DbDetails"/><submit next="searchlength_class_description" function="click"/>
+	</OnClick>
+	</Button><TAB/>
+<Button Text="refresh" ToolTip="ttp_refreshlength_class_description" Name="searchlength_class_description" Size="50,20">
+			  <OnClick><submit next="length_class_descriptionLst"/>	</OnClick>
+</Button>
+<TAB/><TAB/><Button Text="firstpage" Name="FPlength_class_descriptionLst" OnClick="(length_class_descriptionLst)GetPage(First)" Size="50,20"/>
+<TAB/><Button Text="prepage" Name="PRElength_class_descriptionLst" OnClick="(length_class_descriptionLst)GetPage(Pre)" Size="50,20"/>
+<TAB/><Button Text="nextpage" Name="NPlength_class_descriptionLst" OnClick="(length_class_descriptionLst)GetPage(Next)" Size="50,20"/>
+</Ctrls></GroupBox>

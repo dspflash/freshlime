@@ -1,0 +1,48 @@
+﻿<GroupBox Name="GBDEDITproduct_to_store"><Ctrls>
+<GroupBox cols="xs12 sm6 md4 lg3" Multiline="0" Name="GB_product_id"><Ctrls>
+<Label Align="Right" Text="product_id" Name="lb_product_id" Size="60,20"/>
+<TextBox Weight="170" Text="" ToolTip="ttp_product_id" Name="product_id" Size="170,20">
+	<DbDetails>
+<DbTable>freshlime.product</DbTable>
+<Index>product_id</Index>
+<Data>product_name,product_id</Data>
+<Where/>
+<queryFormat/></DbDetails></TextBox>
+</Ctrls></GroupBox>
+<GroupBox cols="xs12 sm6 md4 lg3" Multiline="0" Name="GB_store_id"><Ctrls>
+<Label Align="Right" Text="store_id" onload="init" Name="lb_store_id" Size="60,20"/>
+<ComboBox Weight="170" Text="" ToolTip="ttp_store_id" onload="init" Name="store_id" Size="170,100">
+	<DbDetails>
+<DbTable>freshlime.store</DbTable>
+<Index/>
+<Data>name,store_id</Data>
+<Where/>
+<queryFormat/></DbDetails></ComboBox>
+</Ctrls></GroupBox>
+<GroupBox cols="xs12 sm6 md4 lg3" Multiline="0" Name="GB_typeattach"><Ctrls>
+<Label Align="Right" Text="typeattach" onload="init" Name="lb_typeattach" Size="60,20"/>
+<ComboBox Weight="170" Text="" ToolTip="ttp_typeattach" onload="init" Name="typeattach" Size="170,100">
+	<DbDetails>
+<DbTable>freshlime.inouttype</DbTable>
+<Index>id_type</Index>
+<Data>name,id_type</Data>
+<Where/>
+<queryFormat/></DbDetails></ComboBox>
+</Ctrls></GroupBox>
+<BR AutoHeight="1"/><GroupBox cols="xs12 sm6 md4 lg3" Multiline="0" Name="GB_idattach"><Ctrls>
+<Label Align="Right" Text="idattach" Name="lb_idattach" Size="60,20"/>
+<TextBox Weight="170" Text="" ToolTip="ttp_idattach" Name="idattach" Size="170,20"/>
+</Ctrls></GroupBox>
+<GroupBox cols="xs12 sm6 md4 lg3" Multiline="0" Name="GB_quantityact"><Ctrls>
+<Label Align="Right" Text="quantityact" Name="lb_quantityact" Size="60,20"/>
+<TextBox Weight="170" Text="" ToolTip="ttp_quantityact" Name="quantityact" Size="170,20"/>
+</Ctrls></GroupBox>
+<GroupBox cols="xs12 sm6 md4 lg3" Multiline="0" Name="GB_price"><Ctrls>
+<Label Align="Right" Text="price" Name="lb_price" Size="60,20"/>
+<TextBox Weight="170" Text="" ToolTip="ttp_price" Name="price" Size="170,20"/>
+</Ctrls></GroupBox>
+<GroupBox cols="xs12 sm6 md4 lg3" Multiline="0" overlap="pre" Name="GB_idx" Visible="false"><Ctrls>
+<Label Align="Right" Text="idx" overlap="pre" Name="lb_idx" readonly="true" Size="60,20" Visible="false"/>
+<TextBox Weight="170" Text="" ToolTip="ttp_idx" overlap="pre" Name="idx" readonly="true" Size="170,20" Visible="false"><OnEnChange><if cond="'%{idx}'"><SetVisible name="insertproduct_to_store" Visible="0"/><SetVisible name="modifyproduct_to_store" Visible="1"/><else/><SetVisible name="insertproduct_to_store" Visible="1"/><SetVisible name="modifyproduct_to_store" Visible="0"/></if></OnEnChange></TextBox>
+</Ctrls></GroupBox>
+</Ctrls></GroupBox>

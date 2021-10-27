@@ -1,0 +1,10 @@
+<GroupBox Name="GBDEDITinouttype"><Ctrls>
+<GroupBox Name="GB_name" Multiline="0" cols="xs12 sm6 md4 lg3"><Ctrls>
+<Label Name="lb_name" Size="60,20" Text="name" Align="Right"/>
+<TextBox Name="name" Size="170,20" Text="" Weight="170" ToolTip="ttp_name"></TextBox>
+</Ctrls></GroupBox>
+<GroupBox Name="GB_id_type" Multiline="0" cols="xs12 sm6 md4 lg3" Visible="false" overlap="pre"><Ctrls>
+<Label Name="lb_id_type" Size="60,20" Text="id_type" Align="Right" Visible="false" overlap="pre" readonly="true"/>
+<TextBox Name="id_type" Size="170,20" Text="" Weight="170" ToolTip="ttp_id_type" Visible="false" overlap="pre" readonly="true"><OnEnChange><if cond="'%{id_type}'"><SetVisible name="insertinouttype" Visible="0"/><SetVisible name="modifyinouttype" Visible="1"/><else/><SetVisible name="insertinouttype" Visible="1"/><SetVisible name="modifyinouttype" Visible="0"/></if></OnEnChange></TextBox>
+</Ctrls></GroupBox>
+</Ctrls></GroupBox>

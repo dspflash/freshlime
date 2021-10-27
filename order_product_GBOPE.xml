@@ -1,0 +1,37 @@
+<GroupBox cols="xs12 sm12 md12 lg12" Name="GBOPEorder_product" Size="100,100"><Ctrls>
+<Button sqlpkinsert="order_product_id" Text="create" ToolTip="ttp_createorder_product" Name="insertorder_product" Size="50,20">
+	<OnClick>
+	<DbDetails mode="insert" fcsm="1">
+<DbTable>freshlime.order_product</DbTable>
+<Required>%{dataRequired}</Required>
+<Requireless>%{dataRequireless}</Requireless>
+<Data>product_id[product_id],model,price,quantity,total,tax,reward,order_id,id_p2s</Data>
+<DataEx/>
+<queryFormat>insert into %{table} %{data}</queryFormat></DbDetails>
+	<submit namelist="DbDetails"/><if cond="%{refreshAfterEdit}"><submit next="order_productLst"/></if>
+	</OnClick>
+	</Button><TAB/>
+<Button Text="modify" ToolTip="ttp_modifyorder_product" Name="modifyorder_product" Size="50,20">
+	<OnClick>
+	<DbDetails mode="update" fcsm="1">
+<DbTable>freshlime.order_product</DbTable>
+<Required>%{dataRequired}</Required>
+<Requireless>%{dataRequireless}</Requireless>
+<Data>product_id[product_id],model,price,quantity,total,tax,reward,id_p2s</Data>
+<DataEx/>
+<Where>order_product_id='%{order_product_id}'</Where>
+<queryFormat>update %{table} set %{data} where %{where}</queryFormat></DbDetails>
+	<submit namelist="DbDetails"/><if cond="%{refreshAfterEdit}"><submit next="order_productLst"/></if>
+	</OnClick>
+	</Button><TAB/>
+<Button Text="reset" ToolTip="ttp_resetorder_product" Name="resetorder_product" Size="50,20">
+	<OnClick>
+	<submit next="GBDEDITorder_product" function="reset"/>
+	</OnClick>
+	</Button><TAB/>
+<Button Text="gsearch" ToolTip="ttp_gsearchorder_product" Name="gsearchorder_product" Size="50,20" visible="false">
+	<OnClick>
+	<search next="order_productLst" listed="0" prefixwhere="0" inputed="1"><zone_id op="(" ref=""/></search><submit next="GBDEDITorder_product" namelist="search" function="search"/>
+	</OnClick>
+	</Button><TAB/>
+</Ctrls></GroupBox>

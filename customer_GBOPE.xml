@@ -1,0 +1,37 @@
+<GroupBox cols="xs12 sm12 md12 lg12" Name="GBOPEcustomer" Size="100,100"><Ctrls>
+<Button sqlpkinsert="customer_id" Text="create" ToolTip="ttp_createcustomer" Name="insertcustomer" Size="50,20">
+	<OnClick>
+	<DbDetails mode="insert" fcsm="1">
+<DbTable>freshlime.customer</DbTable>
+<Required>%{dataRequired}</Required>
+<Requireless>%{dataRequireless}</Requireless>
+<Data>lastname,firstname,telephone,customer_group_id[customer_group_id],fax,email,password,status,newsletter</Data>
+<DataEx>date_added;now()</DataEx>
+<queryFormat>insert into %{table} %{data}</queryFormat></DbDetails>
+	<submit namelist="DbDetails"/><if cond="%{refreshAfterEdit}"><submit next="customerLst"/></if>
+	</OnClick>
+	</Button><TAB/>
+<Button Text="modify" ToolTip="ttp_modifycustomer" Name="modifycustomer" Size="50,20">
+	<OnClick>
+	<DbDetails mode="update" fcsm="1">
+<DbTable>freshlime.customer</DbTable>
+<Required>%{dataRequired}</Required>
+<Requireless>%{dataRequireless}</Requireless>
+<Data>lastname,firstname,telephone,customer_group_id[customer_group_id],fax,email,status,newsletter</Data>
+<DataEx/>
+<Where>customer_id='%{customer_id}'</Where>
+<queryFormat>update %{table} set %{data} where %{where}</queryFormat></DbDetails>
+	<submit namelist="DbDetails"/><if cond="%{refreshAfterEdit}"><submit next="customerLst"/></if>
+	</OnClick>
+	</Button><TAB/>
+<Button Text="reset" ToolTip="ttp_resetcustomer" Name="resetcustomer" Size="50,20">
+	<OnClick>
+	<submit next="GBDEDITcustomer" function="reset"/>
+	</OnClick>
+	</Button><TAB/>
+<Button Text="gsearch" ToolTip="ttp_gsearchcustomer" Name="gsearchcustomer" Size="50,20" visible="false">
+	<OnClick>
+	<search next="customerLst" listed="0" prefixwhere="0" inputed="1"><zone_id op="(" ref=""/></search><submit next="GBDEDITcustomer" namelist="search" function="search"/>
+	</OnClick>
+	</Button><TAB/>
+</Ctrls></GroupBox>

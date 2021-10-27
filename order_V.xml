@@ -1,0 +1,15 @@
+<WndTap Name="order_v" Text="order">
+<WndTaps>
+<xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="order_Ve.xml" popup="1"/>
+<xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="order_product_Ve.xml" popup="1"/>
+</WndTaps>
+<xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="lan\order.xml"/>
+<Ctrls><GroupBox  Name="GBorder" id="order" Text="order" Size="100,100"><Ctrls>
+<xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="order_Vs.xml"/>
+<BR AutoHeight="1"/><GroupBox  Name="GBOPVorder" Size="100,20" cols="xs12 sm12 md12 lg12"><Ctrls>
+<Button Text="addone" ToolTip="ttp_addone" Name="addone" Size="50,20">	<OnClick><submit next="$this.order.GBDEDITorder" function="reset"/></OnClick>	</Button><TAB/>	
+<Button Text="reset" ToolTip="ttp_resetorder" Name="resetorder" Size="50,20">	<OnClick>	<submit next="GBDEDITorder" function="reset"/>	</OnClick>	</Button><TAB/>	
+<Button Text="gsearch" ToolTip="ttp_gsearchorder" Name="gsearchorder" Size="50,20" visible="true">	<OnClick>	<search next="order_vLst" listed="0" prefixwhere="0" inputed="1"></search><submit next="GBDEDITorder" namelist="search" function="search"/>	</OnClick>	</Button><TAB/></Ctrls></GroupBox>
+<BR AutoHeight="1"/><xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="order_Vv.xml"/>
+</Ctrls></GroupBox>
+</Ctrls></WndTap>

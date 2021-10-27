@@ -1,0 +1,37 @@
+<GroupBox cols="xs12 sm12 md12 lg12" Name="GBOPEcategory_description" Size="100,100"><Ctrls>
+<Button sqlpkinsert="language_id" Text="create" ToolTip="ttp_createcategory_description" Name="insertcategory_description" Size="50,20">
+	<OnClick>
+	<DbDetails fcsm="1">
+<DbTable>freshlime.category_description</DbTable>
+<Required>%{dataRequired}</Required>
+<Requireless>%{dataRequireless}</Requireless>
+<Data>category_id[category_id],name,description,meta_description,meta_keyword,language_id[language_id]</Data>
+<DataEx/>
+<queryFormat>insert into %{table} %{data}</queryFormat></DbDetails>
+	<submit namelist="DbDetails"/><if cond="%{refreshAfterEdit}"><submit next="category_descriptionLst"/></if>
+	</OnClick>
+	</Button><TAB/>
+<Button Text="modify" ToolTip="ttp_modifycategory_description" Name="modifycategory_description" Size="50,20">
+			  <OnClick>
+	<DbDetails fcsm="1">
+<DbTable>freshlime.category_description</DbTable>
+<Required>%{dataRequired}</Required>
+<Requireless>%{dataRequireless}</Requireless>
+<Data>category_id[category_id],name,description,meta_description,meta_keyword,language_id[language_id]</Data>
+<DataEx/>
+<Where>category_id='%{category_id}' and language_id='%{language_id}'</Where>
+<queryFormat>update %{table} set %{data} where %{where}</queryFormat></DbDetails>
+	<submit namelist="DbDetails"/><if cond="%{refreshAfterEdit}"><submit next="category_descriptionLst"/></if>
+	</OnClick>
+	</Button><TAB/>
+<Button Text="reset" ToolTip="ttp_resetcategory_description" Name="resetcategory_description" Size="50,20">
+	<OnClick>
+	<submit next="GBDEDITcategory_description" function="reset"/>
+	</OnClick>
+	</Button><TAB/>
+<Button Text="gsearch" ToolTip="ttp_gsearchcategory_description" Name="gsearchcategory_description" Size="50,20" visible="false">
+			  <OnClick>
+	<search next="category_descriptionLst" listed="0" prefixwhere="0" inputed="1"><zone_id op="(" ref=""/></search><submit next="GBDEDITcategory_description" namelist="search" function="search"/>
+	</OnClick>
+	</Button><TAB/>
+</Ctrls></GroupBox>

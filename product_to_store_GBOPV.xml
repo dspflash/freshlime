@@ -1,0 +1,17 @@
+﻿<GroupBox cols="xs12 sm12 md12 lg12" Name="GBOPVproduct_to_store" Size="100,100"><Ctrls>
+<Button Text="delete" ToolTip="ttp_deleteproduct_to_store" Name="deleteproduct_to_store" Size="50,20">
+	<OnClick>
+	<DbDetails fcsm="1">
+<DbTable>freshlime.product_to_store</DbTable>
+<Where>idx='%{product_to_storeLst[idx]}'</Where>
+<queryFormat>delete from %{table} where %{where}</queryFormat></DbDetails>
+	<submit namelist="DbDetails"/><submit next="searchproduct_to_store" function="click"/>
+	</OnClick>
+	</Button><TAB/>
+<Button Text="refresh" ToolTip="ttp_refreshproduct_to_store" Name="searchproduct_to_store" Size="50,20">
+			  <OnClick><submit next="product_to_storeLst"/>	</OnClick>
+</Button>
+<TAB/><TAB/><Button Text="firstpage" Name="FPproduct_to_storeLst" OnClick="(product_to_storeLst)GetPage(First)" Size="50,20"/>
+<TAB/><Button Text="prepage" Name="PREproduct_to_storeLst" OnClick="(product_to_storeLst)GetPage(Pre)" Size="50,20"/>
+<TAB/><Button Text="nextpage" Name="NPproduct_to_storeLst" OnClick="(product_to_storeLst)GetPage(Next)" Size="50,20"/>
+</Ctrls></GroupBox>

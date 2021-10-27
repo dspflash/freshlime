@@ -1,0 +1,37 @@
+﻿<GroupBox cols="xs12 sm12 md12 lg12" Name="GBOPEproduct_to_category" Size="100,100"><Ctrls>
+<Button sqlpkinsert="product_id" Text="create" ToolTip="ttp_createproduct_to_category" Name="insertproduct_to_category" Size="50,20">
+	<OnClick>
+	<DbDetails mode="insert" fcsm="1">
+<DbTable>freshlime.product_to_category</DbTable>
+<Required>%{dataRequired}</Required>
+<Requireless>%{dataRequireless}</Requireless>
+<Data>category_id,product_id</Data>
+<DataEx/>
+<queryFormat>insert into %{table} %{data}</queryFormat></DbDetails>
+	<submit namelist="DbDetails"/><if cond="%{refreshAfterEdit}"><submit next="product_to_categoryLst"/></if>
+	</OnClick>
+	</Button><TAB/>
+<Button Text="modify" ToolTip="ttp_modifyproduct_to_category" Name="modifyproduct_to_category" Size="50,20">
+	<OnClick>
+	<DbDetails mode="update" fcsm="1">
+<DbTable>freshlime.product_to_category</DbTable>
+<Required>%{dataRequired}</Required>
+<Requireless>%{dataRequireless}</Requireless>
+<Data>category_id,product_id</Data>
+<DataEx/>
+<Where>category_id='%{category_id}' and product_id='%{product_id}'</Where>
+<queryFormat>update %{table} set %{data} where %{where}</queryFormat></DbDetails>
+	<submit namelist="DbDetails"/><if cond="%{refreshAfterEdit}"><submit next="product_to_categoryLst"/></if>
+	</OnClick>
+	</Button><TAB/>
+<Button Text="reset" ToolTip="ttp_resetproduct_to_category" Name="resetproduct_to_category" Size="50,20">
+	<OnClick>
+	<submit next="GBDEDITproduct_to_category" function="reset"/>
+	</OnClick>
+	</Button><TAB/>
+<Button Text="gsearch" ToolTip="ttp_gsearchproduct_to_category" Name="gsearchproduct_to_category" Size="50,20" visible="false">
+	<OnClick>
+	<search next="product_to_categoryLst" listed="0" prefixwhere="0" inputed="1"><zone_id op="(" ref=""/></search><submit next="GBDEDITproduct_to_category" namelist="search" function="search"/>
+	</OnClick>
+	</Button><TAB/>
+</Ctrls></GroupBox>

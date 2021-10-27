@@ -1,0 +1,48 @@
+<GroupBox Name="GBDEDITorder_product"><Ctrls>
+<GroupBox Name="GB_product_id" Multiline="0" cols="xs12 sm6 md4 lg3"><Ctrls>
+<Label Name="lb_product_id" Size="60,20" Text="product_id" Align="Right" onload="init"/>
+<ComboBox Name="product_id" Size="170,100" Text="" Weight="170"  ToolTip="ttp_product_id" onload="init">
+	<DbDetails fcsm="true">
+<DbTable>freshlime.product</DbTable>
+<Index>product_id</Index>
+<Data>product_name,model,price,sku,product_id</Data>
+<Where></Where>
+<queryFormat></queryFormat></DbDetails></ComboBox>
+</Ctrls></GroupBox>
+<GroupBox Name="GB_model" Multiline="0" cols="xs12 sm6 md4 lg3"><Ctrls>
+<Label Name="lb_model" Size="60,20" Text="model" Align="Right"/>
+<TextBox Name="model" Size="170,20" Text="" Weight="170" ToolTip="ttp_model"></TextBox>
+</Ctrls></GroupBox>
+<GroupBox Name="GB_price" Multiline="0" cols="xs12 sm6 md4 lg3"><Ctrls>
+<Label Name="lb_price" Size="60,20" Text="price" Align="Right"/>
+<TextBox Name="price" Size="170,20" Text="" Weight="170" ToolTip="ttp_price"><OnEnChange><if cond="'%{price}'"><assign name="total" expr="js(%{quantity}*%{price})"/></if></OnEnChange></TextBox>
+</Ctrls></GroupBox>
+<BR AutoHeight="1"/><GroupBox Name="GB_quantity" Multiline="0" cols="xs12 sm6 md4 lg3"><Ctrls>
+<Label Name="lb_quantity" Size="60,20" Text="quantity" Align="Right"/>
+<TextBox Name="quantity" Size="170,20" Text="" Weight="170" ToolTip="ttp_quantity"><OnEnChange><if cond="'%{quantity}'"><assign name="total" expr="js(%{quantity}*%{price})"/></if></OnEnChange></TextBox>
+</Ctrls></GroupBox>
+<GroupBox Name="GB_total" Multiline="0" cols="xs12 sm6 md4 lg3"><Ctrls>
+<Label Name="lb_total" Size="60,20" Text="total" Align="Right"/>
+<TextBox Name="total" Size="170,20" Text="" Weight="170" ToolTip="ttp_total"></TextBox>
+</Ctrls></GroupBox>
+<GroupBox Name="GB_tax" Multiline="0" cols="xs12 sm6 md4 lg3"><Ctrls>
+<Label Name="lb_tax" Size="60,20" Text="tax" Align="Right"/>
+<TextBox Name="tax" Size="170,20" Text="" Weight="170" ToolTip="ttp_tax"></TextBox>
+</Ctrls></GroupBox>
+<BR AutoHeight="1"/><GroupBox Name="GB_reward" Multiline="0" cols="xs12 sm6 md4 lg3"><Ctrls>
+<Label Name="lb_reward" Size="60,20" Text="reward" Align="Right"/>
+<TextBox Name="reward" Size="170,20" Text="" Weight="170" ToolTip="ttp_reward"></TextBox>
+</Ctrls></GroupBox>
+<GroupBox Name="GB_order_id" Multiline="0" cols="xs12 sm6 md4 lg3" Visible="false" overlap="pre"><Ctrls>
+<Label Name="lb_order_id" Size="60,20" Text="order_id" Align="Right" Visible="false" overlap="pre" readonly="true"/>
+<TextBox Name="order_id" Size="170,20" Text="" Weight="170" ToolTip="ttp_order_id" Visible="false" overlap="pre" readonly="true"></TextBox>
+</Ctrls></GroupBox>
+<GroupBox Name="GB_order_product_id" Multiline="0" cols="xs12 sm6 md4 lg3" Visible="false" overlap="pre"><Ctrls>
+<Label Name="lb_order_product_id" Size="60,20" Text="order_product_id" Align="Right" Visible="false" overlap="pre" readonly="true"/>
+<TextBox Name="order_product_id" Size="170,20" Text="" Weight="170" ToolTip="ttp_order_product_id" Visible="false" overlap="pre" readonly="true"><OnEnChange><if cond="'%{order_product_id}'"><SetVisible name="insertorder_product" Visible="0"/><SetVisible name="modifyorder_product" Visible="1"/><else/><SetVisible name="insertorder_product" Visible="1"/><SetVisible name="modifyorder_product" Visible="0"/></if></OnEnChange></TextBox>
+</Ctrls></GroupBox>
+<GroupBox Name="GB_id_p2s" Multiline="0" cols="xs12 sm6 md4 lg3"><Ctrls>
+<Label Name="lb_id_p2s" Size="60,20" Text="id_p2s" Align="Right"/>
+<TextBox Name="id_p2s" Size="170,20" Text="" Weight="170" ToolTip="ttp_id_p2s"></TextBox>
+</Ctrls></GroupBox>
+</Ctrls></GroupBox>

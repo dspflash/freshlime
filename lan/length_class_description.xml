@@ -1,0 +1,24 @@
+<Language name="length_class_description">
+<Lang name="length_class_description" value="length_class_description"/>
+<Lang name="length_class_id" value=""/>
+<Lang name="ttp_length_class_id" value=""/>
+<Lang name="language_id" value=""/>
+<Lang name="ttp_language_id" value=""/>
+<Lang name="title" value=""/>
+<Lang name="ttp_title" value=""/>
+<Lang name="unit" value=""/>
+<Lang name="ttp_unit" value=""/>
+<Lang name="ttp_operationlength_class_description" value="操作"/>
+<Lang name="ttp_createlength_class_description" value="新增"/>
+<Lang name="ttp_modifylength_class_description" value="修改"/>
+<Lang name="ttp_deletelength_class_description" value="删除"/>
+<Lang name="ttp_refreshlength_class_description" value="刷新"/>
+<Lang name="operation" value="操作"/>
+<Lang name="create" value="新增"/>
+<Lang name="modify" value="修改"/>
+<Lang name="delete" value="删除"/>
+<Lang name="refresh" value="刷新"/>
+<Lang name="firstpage" value="首页"/>
+<Lang name="prepage" value="上页"/>
+<Lang name="nextpage" value="下页"/>
+</Language>

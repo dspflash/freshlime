@@ -1,0 +1,16 @@
+﻿<GroupBox Name="GBDEDITproduct_to_category"><Ctrls>
+<GroupBox Name="GB_category_id" Multiline="0" cols="xs12 sm6 md4 lg3"><Ctrls>
+<Label Name="lb_category_id" Size="60,20" Text="category_id" Align="Right"  onload="init"/>
+<ComboBox Name="category_id" Size="170,100" Text="" Weight="170"  ToolTip="ttp_category_id"  onload="init">
+	<DbDetails>
+<DbTable>freshlime.category_description</DbTable>
+<Index></Index>
+<Data>name,category_id</Data>
+<Where></Where>
+<queryFormat></queryFormat></DbDetails></ComboBox>
+</Ctrls></GroupBox>
+<GroupBox Name="GB_product_id" Multiline="0" cols="xs12 sm6 md4 lg3"><Ctrls>
+<Label Name="lb_product_id" Size="60,20" Text="product_id" Align="Right"/>
+<TextBox Name="product_id" Size="170,20" Text="" Weight="170" ToolTip="ttp_product_id"></TextBox>
+</Ctrls></GroupBox>
+</Ctrls></GroupBox>

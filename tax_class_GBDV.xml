@@ -1,0 +1,17 @@
+﻿<GroupBox cols="xs12 sm12 md12 lg12" Name="GBDVtax_class"><Ctrls>
+<ListCtrl loadedclick="0" ToolTip="ttp_tax_class" Name="tax_classLst" Size="700,420">
+	<DbDetails fcsm="1">
+<DbTable>freshlime.tax_class</DbTable>
+<Index>tax_class_id</Index>
+<Data>title,description,date_added,date_modified,tax_class_id</Data>
+<Order>tax_class_id</Order></DbDetails>
+<operator firstpage="1" nextpage="1" refresh="1" prepage="1">
+<op text="modify"><DbDetails><Where>tax_class_id='%{tax_class_vLst[tax_class_id]}'</Where></DbDetails><submit next="$this.tax_class.tax_classLst" namelist="DbDetails"/></op>
+<op text="delete" needconfirm="1"><DbDetails>
+<DbTable>freshlime.tax_class</DbTable>
+<Where>tax_class_id='%{tax_class_vLst[tax_class_id]}'</Where>
+<queryFormat>delete from %{table} where %{where}</queryFormat></DbDetails>
+<submit namelist="DbDetails"/><submit/></op>
+</operator>
+</ListCtrl>
+</Ctrls></GroupBox>

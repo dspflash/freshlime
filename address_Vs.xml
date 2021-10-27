@@ -1,0 +1,48 @@
+﻿<GroupBox Name="GBDEDITaddress"><Ctrls>
+<GroupBox Name="GB_country_id" Multiline="0" cols="xs12 sm6 md4 lg3"><Ctrls>
+<Label Name="lb_country_id" Size="60,20" Text="country_id" Align="Right" onload="init"/>
+<ComboBox Name="country_id" Size="170,100" Text="" Weight="170"  ToolTip="ttp_country_id" onload="init">
+	<DbDetails>
+<DbTable>freshlime.country</DbTable>
+<Index>country_id</Index>
+<Data>name,country_id</Data>
+<Where></Where>
+<queryFormat></queryFormat></DbDetails></ComboBox>
+</Ctrls></GroupBox>
+<GroupBox Name="GB_city" Multiline="0" cols="xs12 sm6 md4 lg3"><Ctrls>
+<Label Name="lb_city" Size="60,20" Text="city" Align="Right" onload="init"/>
+<ComboBox Name="city" Size="170,100" Text="" Weight="170"  ToolTip="ttp_city" onload="init">
+	<DbDetails>
+<DbTable>freshlime.zone</DbTable>
+<Index>zone_id</Index>
+<Data>name,zone_id</Data>
+<Where></Where>
+<queryFormat></queryFormat></DbDetails></ComboBox>
+</Ctrls></GroupBox>
+<GroupBox Name="GB_zone_id" Multiline="0" cols="xs12 sm6 md4 lg3"><Ctrls>
+<Label Name="lb_zone_id" Size="60,20" Text="zone_id" Align="Right" onload="init"/>
+<ComboBox Name="zone_id" Size="170,100" Text="" Weight="170"  ToolTip="ttp_zone_id" onload="init">
+	<DbDetails>
+<DbTable>freshlime.zone</DbTable>
+<Index>zone_id</Index>
+<Data>name,zone_id</Data>
+<Where></Where>
+<queryFormat></queryFormat></DbDetails></ComboBox>
+</Ctrls></GroupBox>
+<BR AutoHeight="1"/><GroupBox Name="GB_address_1" Multiline="0" cols="xs12 sm6 md4 lg3"><Ctrls>
+<Label Name="lb_address_1" Size="60,20" Text="address_1" Align="Right"/>
+<TextBox Name="address_1" Size="170,20" Text="" Weight="170" ToolTip="ttp_address_1"></TextBox>
+</Ctrls></GroupBox>
+<GroupBox Name="GB_postcode" Multiline="0" cols="xs12 sm6 md4 lg3"><Ctrls>
+<Label Name="lb_postcode" Size="60,20" Text="postcode" Align="Right"/>
+<TextBox Name="postcode" Size="170,20" Text="" Weight="170" ToolTip="ttp_postcode"></TextBox>
+</Ctrls></GroupBox>
+<GroupBox Name="GB_customer_id" Multiline="0" cols="xs12 sm6 md4 lg3" Visible="false" overlap="pre"><Ctrls>
+<Label Name="lb_customer_id" Size="60,20" Text="customer_id" Align="Right" Visible="false" overlap="pre" readonly="true"/>
+<TextBox Name="customer_id" Size="170,20" Text="" Weight="170" ToolTip="ttp_customer_id" Visible="false" overlap="pre" readonly="true"></TextBox>
+</Ctrls></GroupBox>
+<GroupBox Name="GB_address_id" Multiline="0" cols="xs12 sm6 md4 lg3" Visible="false" overlap="pre"><Ctrls>
+<Label Name="lb_address_id" Size="60,20" Text="address_id" Align="Right" Visible="false" overlap="pre" readonly="true"/>
+<TextBox Name="address_id" Size="170,20" Text="" Weight="170" ToolTip="ttp_address_id" Visible="false" overlap="pre" readonly="true"><OnEnChange><if cond="'%{address_id}'"><SetVisible name="insertaddress" Visible="0"/><SetVisible name="modifyaddress" Visible="1"/><else/><SetVisible name="insertaddress" Visible="1"/><SetVisible name="modifyaddress" Visible="0"/></if></OnEnChange></TextBox>
+</Ctrls></GroupBox>
+</Ctrls></GroupBox>

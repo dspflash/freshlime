@@ -1,0 +1,37 @@
+<GroupBox cols="xs12 sm12 md12 lg12" Name="GBOPEinouttype" Size="100,100"><Ctrls>
+<Button sqlpkinsert="id_type" Text="create" ToolTip="ttp_createinouttype" Name="insertinouttype" Size="50,20">
+	<OnClick>
+	<DbDetails fcsm="1">
+<DbTable>freshlime.inouttype</DbTable>
+<Required>%{dataRequired}</Required>
+<Requireless>%{dataRequireless}</Requireless>
+<Data>name</Data>
+<DataEx/>
+<queryFormat>insert into %{table} %{data}</queryFormat></DbDetails>
+	<submit namelist="DbDetails"/><if cond="%{refreshAfterEdit}"><submit next="inouttypeLst"/></if>
+	</OnClick>
+	</Button><TAB/>
+<Button Text="modify" ToolTip="ttp_modifyinouttype" Name="modifyinouttype" Size="50,20">
+			  <OnClick>
+	<DbDetails fcsm="1">
+<DbTable>freshlime.inouttype</DbTable>
+<Required>%{dataRequired}</Required>
+<Requireless>%{dataRequireless}</Requireless>
+<Data>name</Data>
+<DataEx/>
+<Where>id_type='%{id_type}'</Where>
+<queryFormat>update %{table} set %{data} where %{where}</queryFormat></DbDetails>
+	<submit namelist="DbDetails"/><if cond="%{refreshAfterEdit}"><submit next="inouttypeLst"/></if>
+	</OnClick>
+	</Button><TAB/>
+<Button Text="reset" ToolTip="ttp_resetinouttype" Name="resetinouttype" Size="50,20">
+	<OnClick>
+	<submit next="GBDEDITinouttype" function="reset"/>
+	</OnClick>
+	</Button><TAB/>
+<Button Text="gsearch" ToolTip="ttp_gsearchinouttype" Name="gsearchinouttype" Size="50,20" visible="false">
+			  <OnClick>
+	<search next="inouttypeLst" listed="0" prefixwhere="0" inputed="1"><zone_id op="(" ref=""/></search><submit next="GBDEDITinouttype" namelist="search" function="search"/>
+	</OnClick>
+	</Button><TAB/>
+</Ctrls></GroupBox>

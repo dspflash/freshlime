@@ -1,0 +1,12 @@
+<GroupBox Name="GBDVcategory" cols="xs12 sm12 md12 lg12" visible="0"><Ctrls>
+<ListCtrl Name="categoryLst" ToolTip="ttp_category" Size="70,20" visible="0" loadedclick="1">
+	<DbDetails fcsm="1">
+<DbTable>freshlime.category</DbTable>
+<Index>category_id</Index>
+<Data>category_name,parent_id,status,date_added,date_modified,image,sort_order,top,category_id</Data>
+<Order>category_id</Order></DbDetails>
+<OnClick><assign name="parent_id[category_id]" expr="%{categoryLst[parent_id]}" function="SetSel"/>
+<if cond="%{category_id}"><SetVisible name="insertcategory" Visible="0"/><SetVisible name="modifycategory" Visible="1"/></if>
+</OnClick>
+</ListCtrl>
+</Ctrls></GroupBox>

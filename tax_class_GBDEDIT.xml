@@ -1,0 +1,22 @@
+﻿<GroupBox Name="GBDEDITtax_class"><Ctrls>
+<GroupBox cols="xs12 sm6 md4 lg3" Multiline="0" Name="GB_title"><Ctrls>
+<Label Align="Right" Text="title" Name="lb_title" Size="60,20"/>
+<TextBox Weight="170" Text="" ToolTip="ttp_title" Name="title" Size="170,20"/>
+</Ctrls></GroupBox>
+<GroupBox cols="xs12 sm6 md4 lg3" Multiline="0" Name="GB_description"><Ctrls>
+<Label Align="Right" Text="description" Name="lb_description" Size="60,20"/>
+<TextBox Weight="170" Text="" ToolTip="ttp_description" Name="description" Size="170,20"/>
+</Ctrls></GroupBox>
+<GroupBox cols="xs12 sm6 md4 lg3" Multiline="0" overlap="pre" Name="GB_date_added" Visible="false"><Ctrls>
+<Label Align="Right" Text="date_added" overlap="pre" Name="lb_date_added" readonly="true" Size="60,20" Visible="false"/>
+<DateTime Weight="170" Text="" ToolTip="ttp_date_added" overlap="pre" Name="date_added" readonly="true" Size="170,20" Visible="false" Format="yyyy-MM-dd HH:mm:ss"/>
+</Ctrls></GroupBox>
+<GroupBox cols="xs12 sm6 md4 lg3" Multiline="0" overlap="pre" Name="GB_date_modified" Visible="false"><Ctrls>
+<Label Align="Right" Text="date_modified" overlap="pre" Name="lb_date_modified" readonly="true" Size="60,20" Visible="false"/>
+<DateTime Weight="170" Text="" ToolTip="ttp_date_modified" overlap="pre" Name="date_modified" readonly="true" Size="170,20" Visible="false" Format="yyyy-MM-dd HH:mm:ss"/>
+</Ctrls></GroupBox>
+<GroupBox cols="xs12 sm6 md4 lg3" Multiline="0" overlap="pre" Name="GB_tax_class_id" Visible="false"><Ctrls>
+<Label Align="Right" Text="tax_class_id" overlap="pre" Name="lb_tax_class_id" readonly="true" Size="60,20" Visible="false"/>
+<TextBox Weight="170" Text="" ToolTip="ttp_tax_class_id" overlap="pre" Name="tax_class_id" readonly="true" Size="170,20" Visible="false"><OnEnChange><if cond="'%{tax_class_id}'"><SetVisible name="inserttax_class" Visible="0"/><SetVisible name="modifytax_class" Visible="1"/><else/><SetVisible name="inserttax_class" Visible="1"/><SetVisible name="modifytax_class" Visible="0"/></if></OnEnChange></TextBox>
+</Ctrls></GroupBox>
+</Ctrls></GroupBox>

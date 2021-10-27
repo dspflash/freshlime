@@ -1,0 +1,12 @@
+<GroupBox Name="GBDVproduct" cols="xs12 sm12 md12 lg12" visible="0"><Ctrls>
+<ListCtrl Name="productLst" ToolTip="ttp_product" Size="70,20" visible="0" loadedclick="1">
+	<DbDetails fcsm="1">
+<DbTable>freshlime.product</DbTable>
+<Index>product_id</Index>
+<Data>product_name,manufacturer_id,status,upc,sku,price,quantity,minimum,date_available,weight,weight_class_id,length,width,height,length_class_id,date_added,date_modified,model,location,stock_status_id,image,shipping,points,tax_class_id,subtract,sort_order,viewed,product_id</Data>
+<Order>product_id</Order></DbDetails>
+<OnClick><assign name="manufacturer_id[manufacturer_id]" expr="%{productLst[manufacturer_id]}" function="SetSel"/><assign name="weight_class_id[weight_class_id]" expr="%{productLst[weight_class_id]}" function="SetSel"/><assign name="length_class_id[length_class_id]" expr="%{productLst[length_class_id]}" function="SetSel"/><assign name="stock_status_id[stock_status_id]" expr="%{productLst[stock_status_id]}" function="SetSel"/><assign name="tax_class_id[tax_class_id]" expr="%{productLst[tax_class_id]}" function="SetSel"/>
+<if cond="%{product_id}"><SetVisible name="insertproduct" Visible="0"/><SetVisible name="modifyproduct" Visible="1"/></if>
+</OnClick>
+</ListCtrl>
+</Ctrls></GroupBox>

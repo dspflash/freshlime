@@ -1,0 +1,17 @@
+<GroupBox Name="GBDVcategory_description" cols="xs12 sm12 md12 lg12"><Ctrls>
+<ListCtrl Name="category_description_vLst" ToolTip="ttp_category_description" Size="700,420" OnLoad="init" Heading="category_id,120;name,640;description,20;meta_description,640;meta_keyword,640;language_id,120;" loadedclick="0">
+	<DbDetails >
+<DbTable>freshlime.category_description c left join freshlime.category c0 on c.category_id=c0.category_id left join freshlime.language l on c.language_id=l.language_id</DbTable>
+<Index>language_id</Index>
+<Data>c0.category_name category_id,c.name,c.description,c.meta_description,c.meta_keyword,l.name language_id</Data>
+<Order>category_id,language_id</Order></DbDetails>
+<operator refresh="1" firstpage="1" prepage="1" nextpage="1">
+<op text="modify"><DbDetails><Where>language_id='%{category_description_vLst[language_id]}'</Where></DbDetails><submit namelist="DbDetails" next="$this.category_description.category_descriptionLst"/></op>
+<op text="delete" needconfirm="1"><DbDetails>
+<DbTable>freshlime.category_description</DbTable>
+<Where>language_id='%{category_description_vLst[language_id]}'</Where>
+<queryFormat>delete from %{table} where %{where}</queryFormat></DbDetails>
+<submit namelist="DbDetails"/><submit/></op>
+</operator>
+</ListCtrl>
+</Ctrls></GroupBox>

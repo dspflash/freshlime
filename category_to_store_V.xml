@@ -1,0 +1,14 @@
+<WndTap Name="category_to_store_v" Text="category_to_store">
+<WndTaps>
+<xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="category_to_store_Ve.xml" popup="1"/>
+</WndTaps>
+<xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="lan\category_to_store.xml"/>
+<Ctrls><GroupBox  Name="GBcategory_to_store" id="category_to_store" Text="category_to_store" Size="100,100"><Ctrls>
+<xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="category_to_store_Vs.xml"/>
+<BR AutoHeight="1"/><GroupBox  Name="GBOPVcategory_to_store" Size="100,20" cols="xs12 sm12 md12 lg12"><Ctrls>
+<Button Text="addone" ToolTip="ttp_addone" Name="addone" Size="50,20">	<OnClick><submit next="$this.category_to_store.GBDEDITcategory_to_store" function="reset"/></OnClick>	</Button><TAB/>	
+<Button Text="reset" ToolTip="ttp_resetcategory_to_store" Name="resetcategory_to_store" Size="50,20">	<OnClick>	<submit next="GBDEDITcategory_to_store" function="reset"/>	</OnClick>	</Button><TAB/>	
+<Button Text="gsearch" ToolTip="ttp_gsearchcategory_to_store" Name="gsearchcategory_to_store" Size="50,20" visible="true">	<OnClick>	<search next="category_to_store_vLst" listed="0" prefixwhere="0" inputed="1"></search><submit next="GBDEDITcategory_to_store" namelist="search" function="search"/>	</OnClick>	</Button><TAB/></Ctrls></GroupBox>
+<BR AutoHeight="1"/><xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="category_to_store_Vv.xml"/>
+</Ctrls></GroupBox>
+</Ctrls></WndTap>

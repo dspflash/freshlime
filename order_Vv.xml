@@ -1,0 +1,17 @@
+<GroupBox Name="GBDVorder" cols="xs12 sm12 md12 lg12"><Ctrls>
+<ListCtrl Name="order_vLst" ToolTip="ttp_order" Size="700,420" OnLoad="init" Heading="customer_id,120;invoice_prefix,130;order_status_id,120;customer_group_id,120;email,480;telephone,160;fax,160;date_added,150;date_modified,150;comment,20;store_id,120;invoice_no,55;store_name,320;store_url,640;shipping_firstname,160;shipping_lastname,160;shipping_company,160;shipping_address_1,640;shipping_address_2,640;shipping_city,640;shipping_postcode,50;shipping_country,640;shipping_country_id,55;shipping_zone,640;shipping_zone_id,55;shipping_address_format,640;shipping_method,640;shipping_code,640;payment_firstname,160;payment_lastname,160;payment_company,160;payment_address_1,640;payment_address_2,640;payment_city,640;payment_postcode,50;payment_country,640;payment_country_id,55;payment_zone,640;payment_zone_id,55;payment_address_format,640;payment_method,640;payment_code,640;total,75;affiliate_id,55;commission,75;language_id,55;currency_id,55;currency_code,20;currency_value,75;ip,75;forwarded_ip,75;user_agent,640;accept_language,640;order_id,55;" loadedclick="0">
+	<DbDetails >
+<DbTable>freshlime.order o left join freshlime.order_status o0 on o.order_status_id=o0.order_status_id left join freshlime.customer_group c on o.customer_group_id=c.customer_group_id</DbTable>
+<Index>order_id</Index>
+<Data>o.customer_id,o.invoice_prefix,o0.name order_status_id,c.name customer_group_id,o.email,o.telephone,o.fax,o.date_added,o.date_modified,o.comment,o.store_id,o.invoice_no,o.store_name,o.store_url,o.shipping_firstname,o.shipping_lastname,o.shipping_company,o.shipping_address_1,o.shipping_address_2,o.shipping_city,o.shipping_postcode,o.shipping_country,o.shipping_country_id,o.shipping_zone,o.shipping_zone_id,o.shipping_address_format,o.shipping_method,o.shipping_code,o.payment_firstname,o.payment_lastname,o.payment_company,o.payment_address_1,o.payment_address_2,o.payment_city,o.payment_postcode,o.payment_country,o.payment_country_id,o.payment_zone,o.payment_zone_id,o.payment_address_format,o.payment_method,o.payment_code,o.total,o.affiliate_id,o.commission,o.language_id,o.currency_id,o.currency_code,o.currency_value,o.ip,o.forwarded_ip,o.user_agent,o.accept_language,o.order_id</Data>
+<Order>order_id</Order></DbDetails>
+<operator refresh="1" firstpage="1" prepage="1" nextpage="1">
+<op text="modify"><DbDetails><Where>order_id='%{order_vLst[order_id]}'</Where></DbDetails><submit namelist="DbDetails" next="$this.order.orderLst"/></op>
+<op text="delete" needconfirm="1"><DbDetails>
+<DbTable>freshlime.order</DbTable>
+<Where>order_id='%{order_vLst[order_id]}'</Where>
+<queryFormat>delete from %{table} where %{where}</queryFormat></DbDetails>
+<submit namelist="DbDetails"/><submit/></op>
+</operator>
+</ListCtrl>
+</Ctrls></GroupBox>

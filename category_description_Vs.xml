@@ -1,0 +1,38 @@
+<GroupBox Name="GBDEDITcategory_description"><Ctrls>
+<GroupBox Name="GB_category_id" Multiline="0" cols="xs12 sm6 md4 lg3"><Ctrls>
+<Label Name="lb_category_id" Size="60,20" Text="category_id" Align="Right" readonly="true"/>
+<ComboBox Name="category_id" Size="170,100" Text="" Weight="170"  ToolTip="ttp_category_id" readonly="true">
+	<DbDetails>
+<DbTable>freshlime.category</DbTable>
+<Index>category_id</Index>
+<Data>category_name,category_id</Data>
+<Where></Where>
+<queryFormat></queryFormat></DbDetails></ComboBox>
+</Ctrls></GroupBox>
+<GroupBox Name="GB_name" Multiline="0" cols="xs12 sm6 md4 lg3"><Ctrls>
+<Label Name="lb_name" Size="60,20" Text="name" Align="Right"/>
+<TextBox Name="name" Size="170,20" Text="" Weight="170" ToolTip="ttp_name"></TextBox>
+</Ctrls></GroupBox>
+<GroupBox Name="GB_description" Multiline="0" cols="xs12 sm6 md4 lg3"><Ctrls>
+<Label Name="lb_description" Size="60,20" Text="description" Align="Right"/>
+<TextBox Name="description" Size="170,20" Text="" Weight="170" ToolTip="ttp_description"></TextBox>
+</Ctrls></GroupBox>
+<BR AutoHeight="1"/><GroupBox Name="GB_meta_description" Multiline="0" cols="xs12 sm6 md4 lg3"><Ctrls>
+<Label Name="lb_meta_description" Size="60,20" Text="meta_description" Align="Right"/>
+<TextBox Name="meta_description" Size="170,20" Text="" Weight="170" ToolTip="ttp_meta_description"></TextBox>
+</Ctrls></GroupBox>
+<GroupBox Name="GB_meta_keyword" Multiline="0" cols="xs12 sm6 md4 lg3"><Ctrls>
+<Label Name="lb_meta_keyword" Size="60,20" Text="meta_keyword" Align="Right"/>
+<TextBox Name="meta_keyword" Size="170,20" Text="" Weight="170" ToolTip="ttp_meta_keyword"></TextBox>
+</Ctrls></GroupBox>
+<GroupBox Name="GB_language_id" Multiline="0" cols="xs12 sm6 md4 lg3"><Ctrls>
+<Label Name="lb_language_id" Size="60,20" Text="language_id" Align="Right" onload="init"/>
+<ComboBox Name="language_id" Size="170,100" Text="" Weight="170"  ToolTip="ttp_language_id" onload="init">
+	<DbDetails>
+<DbTable>freshlime.language</DbTable>
+<Index>language_id</Index>
+<Data>name,language_id</Data>
+<Where></Where>
+<queryFormat></queryFormat></DbDetails></ComboBox>
+</Ctrls></GroupBox>
+</Ctrls></GroupBox>

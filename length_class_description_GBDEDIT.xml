@@ -1,0 +1,30 @@
+﻿<GroupBox Name="GBDEDITlength_class_description"><Ctrls>
+<GroupBox cols="xs12 sm6 md4 lg3" Multiline="0" Name="GB_language_id"><Ctrls>
+<Label Align="Right" Text="language_id" Name="lb_language_id" Size="60,20"/>
+<ComboBox Weight="170" Text="" ToolTip="ttp_language_id" Name="language_id" Size="170,100">
+	<DbDetails>
+<DbTable>freshlime.language</DbTable>
+<Index/>
+<Data>name,language_id</Data>
+<Where/>
+<queryFormat/></DbDetails></ComboBox>
+</Ctrls></GroupBox>
+<GroupBox cols="xs12 sm6 md4 lg3" Multiline="0" Name="GB_title"><Ctrls>
+<Label Align="Right" Text="title" Name="lb_title" Size="60,20"/>
+<TextBox Weight="170" Text="" ToolTip="ttp_title" Name="title" Size="170,20"/>
+</Ctrls></GroupBox>
+<GroupBox cols="xs12 sm6 md4 lg3" Multiline="0" Name="GB_unit"><Ctrls>
+<Label Align="Right" Text="unit" Name="lb_unit" Size="60,20"/>
+<TextBox Weight="170" Text="" ToolTip="ttp_unit" Name="unit" Size="170,20"/>
+</Ctrls></GroupBox>
+<BR AutoHeight="1"/><GroupBox cols="xs12 sm6 md4 lg3" Multiline="0" Name="GB_length_class_id"><Ctrls>
+<Label Align="Right" Text="length_class_id" onload="init" Name="lb_length_class_id" Size="60,20"/>
+<ComboBox Weight="170" Text="" ToolTip="ttp_length_class_id" onload="init" Name="length_class_id" Size="170,100">
+	<DbDetails>
+<DbTable>freshlime.length_class</DbTable>
+<Index>length_class_id</Index>
+<Data>length_class_id</Data>
+<Where/>
+<queryFormat/></DbDetails></ComboBox>
+</Ctrls></GroupBox>
+</Ctrls></GroupBox>

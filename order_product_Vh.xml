@@ -1,0 +1,12 @@
+<GroupBox Name="GBDVorder_product" cols="xs12 sm12 md12 lg12" visible="0"><Ctrls>
+<ListCtrl Name="order_productLst" ToolTip="ttp_order_product" Size="70,20" visible="0" loadedclick="1">
+	<DbDetails fcsm="1">
+<DbTable>freshlime.order_product</DbTable>
+<Index>order_product_id</Index>
+<Data>product_id,model,price,quantity,total,tax,reward,order_id,order_product_id,id_p2s</Data>
+<Order>order_product_id</Order></DbDetails>
+<OnClick><assign name="product_id[product_id]" expr="%{order_productLst[product_id]}" function="SetSel"/>
+<if cond="%{order_product_id}"><SetVisible name="insertorder_product" Visible="0"/><SetVisible name="modifyorder_product" Visible="1"/></if>
+</OnClick>
+</ListCtrl>
+</Ctrls></GroupBox>

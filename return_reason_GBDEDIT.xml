@@ -1,0 +1,20 @@
+﻿<GroupBox Name="GBDEDITreturn_reason"><Ctrls>
+<GroupBox cols="xs12 sm6 md4 lg3" Multiline="0" Name="GB_name"><Ctrls>
+<Label Align="Right" Text="name" Name="lb_name" Size="60,20"/>
+<TextBox Weight="170" Text="" ToolTip="ttp_name" Name="name" Size="170,20"/>
+</Ctrls></GroupBox>
+<GroupBox cols="xs12 sm6 md4 lg3" Multiline="0" Name="GB_language_id"><Ctrls>
+<Label Align="Right" Text="language_id" onload="init" Name="lb_language_id" Size="60,20"/>
+<ComboBox Weight="170" Text="" ToolTip="ttp_language_id" onload="init" Name="language_id" Size="170,100">
+	<DbDetails>
+<DbTable>freshlime.language</DbTable>
+<Index/>
+<Data>name,language_id</Data>
+<Where/>
+<queryFormat/></DbDetails></ComboBox>
+</Ctrls></GroupBox>
+<GroupBox cols="xs12 sm6 md4 lg3" Multiline="0" overlap="pre" Name="GB_return_reason_id" Visible="false"><Ctrls>
+<Label Align="Right" Text="return_reason_id" overlap="pre" Name="lb_return_reason_id" readonly="true" Size="60,20" Visible="false"/>
+<TextBox Weight="170" Text="" ToolTip="ttp_return_reason_id" overlap="pre" Name="return_reason_id" readonly="true" Size="170,20" Visible="false"><OnEnChange><if cond="'%{return_reason_id}'"><SetVisible name="insertreturn_reason" Visible="0"/><SetVisible name="modifyreturn_reason" Visible="1"/><else/><SetVisible name="insertreturn_reason" Visible="1"/><SetVisible name="modifyreturn_reason" Visible="0"/></if></OnEnChange></TextBox>
+</Ctrls></GroupBox>
+</Ctrls></GroupBox>

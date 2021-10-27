@@ -1,0 +1,17 @@
+﻿<GroupBox Name="GBDVlength_class_description" cols="xs12 sm12 md12 lg12"><Ctrls>
+<ListCtrl Name="length_class_description_vLst" ToolTip="ttp_length_class_description" Size="700,420" OnLoad="init" loadedclick="0">
+	<DbDetails >
+<DbTable>freshlime.length_class_description l</DbTable>
+<Index>length_class_id</Index>
+<Data>l.language_id,l.title,l.unit,l.length_class_id</Data>
+<Order>language_id,length_class_id</Order></DbDetails>
+<operator refresh="1" firstpage="1" prepage="1" nextpage="1">
+<op text="modify"><DbDetails><Where>length_class_id='%{length_class_description_vLst[length_class_id]}'</Where></DbDetails><submit namelist="DbDetails" next="$this.length_class_description.length_class_descriptionLst"/></op>
+<op text="delete" needconfirm="1"><DbDetails>
+<DbTable>freshlime.length_class_description</DbTable>
+<Where>length_class_id='%{length_class_description_vLst[length_class_id]}'</Where>
+<queryFormat>delete from %{table} where %{where}</queryFormat></DbDetails>
+<submit namelist="DbDetails"/><submit/></op>
+</operator>
+</ListCtrl>
+</Ctrls></GroupBox>

@@ -1,0 +1,19 @@
+﻿<GroupBox cols="xs12 sm12 md12 lg12" Name="GBDVaddress"><Ctrls>
+<ListCtrl loadedclick="0" ToolTip="ttp_address" Name="addressLst" Size="700,420">
+	<DbDetails fcsm="1">
+<DbTable>freshlime.address a left join freshlime.country c on a.country_id=c.country_id left join freshlime.zone z on a.city=z.zone_id left join freshlime.zone z0 on a.zone_id=z0.zone_id</DbTable>
+<Index>address_id</Index>
+<Data>c.name country_id,z.name city,z0.name zone_id,a.address_1,a.postcode,a.address_id</Data>
+<Order>address_id</Order></DbDetails>
+<DbDetails><Where>customer_id='%{customer_id}'</Where></DbDetails><DbDetails><Where>customer_id='%{customer_id}'</Where></DbDetails>
+<operator firstpage="1" nextpage="1" refresh="1" prepage="1">
+<op mustselected="0" text="addone"><if cond="!%{customer_id}"><alert expr="customer_id is Empty!"/><else/><submit next="$parent.address.GBDEDITaddress" function="reset"/><assign name="$parent.address.customer_id" expr="%{customer_id}"/></if></op>
+<op text="modify"><DbDetails><Where>address_id='%{address_vLst[address_id]}'</Where></DbDetails><submit next="$parent.address.addressLst" namelist="DbDetails"/></op>
+<op text="delete" needconfirm="1"><DbDetails>
+<DbTable>freshlime.address</DbTable>
+<Where>address_id='%{address_vLst[address_id]}'</Where>
+<queryFormat>delete from %{table} where %{where}</queryFormat></DbDetails>
+<submit namelist="DbDetails"/><submit/></op>
+</operator>
+</ListCtrl>
+</Ctrls></GroupBox>

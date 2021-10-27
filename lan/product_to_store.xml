@@ -1,0 +1,30 @@
+<Language name="product_to_store">
+<Lang name="product_to_store" value="产品信息统计"/>
+<Lang name="product_id" value="产品"/>
+<Lang name="ttp_product_id" value=""/>
+<Lang name="store_id" value="仓库"/>
+<Lang name="ttp_store_id" value=""/>
+<Lang name="typeattach" value="类别"/>
+<Lang name="ttp_typeattach" value="1-order,2-return,etc"/>
+<Lang name="idattach" value="单证"/>
+<Lang name="ttp_idattach" value="orderid,returnid,etc"/>
+<Lang name="quantityact" value="数量"/>
+<Lang name="ttp_quantityact" value=""/>
+<Lang name="idx" value=""/>
+<Lang name="ttp_idx" value=""/>
+<Lang name="typedsearch" value="按类别"/>
+<Lang name="ttp_typedsearch" value="查询时区分类别如入库、出库..."/>
+<Lang name="ttp_operationproduct_to_store" value="操作"/>
+<Lang name="ttp_createproduct_to_store" value="新增"/>
+<Lang name="ttp_modifyproduct_to_store" value="修改"/>
+<Lang name="ttp_deleteproduct_to_store" value="删除"/>
+<Lang name="ttp_refreshproduct_to_store" value="刷新"/>
+<Lang name="operation" value="操作"/>
+<Lang name="create" value="新增"/>
+<Lang name="modify" value="修改"/>
+<Lang name="delete" value="删除"/>
+<Lang name="refresh" value="查询"/>
+<Lang name="firstpage" value="首页"/>
+<Lang name="prepage" value="上页"/>
+<Lang name="nextpage" value="下页"/>
+</Language>

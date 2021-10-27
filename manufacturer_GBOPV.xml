@@ -1,0 +1,17 @@
+<GroupBox cols="xs12 sm12 md12 lg12" Name="GBOPVmanufacturer" Size="100,100"><Ctrls>
+<Button Text="delete" ToolTip="ttp_deletemanufacturer" Name="deletemanufacturer" Size="50,20">
+	<OnClick>
+	<DbDetails fcsm="1">
+<DbTable>freshlime.manufacturer</DbTable>
+<Where>manufacturer_id='%{manufacturerLst[manufacturer_id]}'</Where>
+<queryFormat>delete from %{table} where %{where}</queryFormat></DbDetails>
+	<submit namelist="DbDetails"/><submit next="searchmanufacturer" function="click"/>
+	</OnClick>
+	</Button><TAB/>
+<Button Text="refresh" ToolTip="ttp_refreshmanufacturer" Name="searchmanufacturer" Size="50,20">
+			  <OnClick><submit next="manufacturerLst"/>	</OnClick>
+</Button>
+<TAB/><Button Text="firstpage" Name="FPmanufacturerLst" OnClick="(manufacturerLst)GetPage(First)" Size="40,20"/>
+<Button Text="prepage" Name="PREmanufacturerLst" OnClick="(manufacturerLst)GetPage(Pre)" Size="40,20"/>
+<Button Text="nextpage" Name="NPmanufacturerLst" OnClick="(manufacturerLst)GetPage(Next)" Size="40,20"/>
+</Ctrls></GroupBox>

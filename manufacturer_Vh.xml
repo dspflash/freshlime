@@ -1,0 +1,12 @@
+<GroupBox Name="GBDVmanufacturer" cols="xs12 sm12 md12 lg12" visible="0"><Ctrls>
+<ListCtrl Name="manufacturerLst" ToolTip="ttp_manufacturer" Size="70,20" visible="0" loadedclick="1">
+	<DbDetails fcsm="1">
+<DbTable>freshlime.manufacturer</DbTable>
+<Index>manufacturer_id</Index>
+<Data>name,image,sort_order,manufacturer_id</Data>
+<Order>manufacturer_id</Order></DbDetails>
+<OnClick>
+<if cond="%{manufacturer_id}"><SetVisible name="insertmanufacturer" Visible="0"/><SetVisible name="modifymanufacturer" Visible="1"/></if>
+</OnClick>
+</ListCtrl>
+</Ctrls></GroupBox>

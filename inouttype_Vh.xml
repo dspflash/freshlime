@@ -1,0 +1,12 @@
+<GroupBox Name="GBDVinouttype" cols="xs12 sm12 md12 lg12" visible="0"><Ctrls>
+<ListCtrl Name="inouttypeLst" ToolTip="ttp_inouttype" Size="70,20" visible="0" loadedclick="1">
+	<DbDetails fcsm="1">
+<DbTable>freshlime.inouttype</DbTable>
+<Index>id_type</Index>
+<Data>name,id_type</Data>
+<Order>id_type</Order></DbDetails>
+<OnClick>
+<if cond="%{id_type}"><SetVisible name="insertinouttype" Visible="0"/><SetVisible name="modifyinouttype" Visible="1"/></if>
+</OnClick>
+</ListCtrl>
+</Ctrls></GroupBox>

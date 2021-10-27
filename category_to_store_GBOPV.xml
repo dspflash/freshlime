@@ -1,0 +1,17 @@
+<GroupBox cols="xs12 sm12 md12 lg12" Name="GBOPVcategory_to_store" Size="100,100"><Ctrls>
+<Button Text="delete" ToolTip="ttp_deletecategory_to_store" Name="deletecategory_to_store" Size="50,20">
+	<OnClick>
+	<DbDetails fcsm="1">
+<DbTable>freshlime.category_to_store</DbTable>
+<Where>category_id='%{category_to_storeLst[category_id]}' and store_id='%{category_to_storeLst[store_id]}'</Where>
+<queryFormat>delete from %{table} where %{where}</queryFormat></DbDetails>
+	<submit namelist="DbDetails"/><submit next="searchcategory_to_store" function="click"/>
+	</OnClick>
+	</Button><TAB/>
+<Button Text="refresh" ToolTip="ttp_refreshcategory_to_store" Name="searchcategory_to_store" Size="50,20">
+			  <OnClick><submit next="category_to_storeLst"/>	</OnClick>
+</Button>
+<TAB/><Button Text="firstpage" Name="FPcategory_to_storeLst" OnClick="(category_to_storeLst)GetPage(First)" Size="40,20"/>
+<Button Text="prepage" Name="PREcategory_to_storeLst" OnClick="(category_to_storeLst)GetPage(Pre)" Size="40,20"/>
+<Button Text="nextpage" Name="NPcategory_to_storeLst" OnClick="(category_to_storeLst)GetPage(Next)" Size="40,20"/>
+</Ctrls></GroupBox>

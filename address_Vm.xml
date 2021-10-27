@@ -1,0 +1,6 @@
+﻿<WndTap Name="address_v" Text="address">
+<xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="lan\address.xml"/>
+<Ctrls><GroupBox  Name="GBaddress" id="address" Text="address" Size="100,100"><Ctrls>
+<xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="address_Vv.xml"/>
+</Ctrls></GroupBox>
+</Ctrls></WndTap>

@@ -1,0 +1,37 @@
+<GroupBox Name="GBDEDITcurrency"><Ctrls>
+<GroupBox cols="xs12 sm6 md4 lg3" Multiline="0" Name="GB_title"><Ctrls>
+<Label Align="Right" Text="title" Name="lb_title" Size="60,20"/>
+<TextBox Weight="170" Text="" ToolTip="ttp_title" Name="title" Size="170,20"/>
+</Ctrls></GroupBox>
+<GroupBox cols="xs12 sm6 md4 lg3" Multiline="0" Name="GB_code"><Ctrls>
+<Label Align="Right" Text="code" Name="lb_code" Size="60,20"/>
+<TextBox Weight="170" Text="" ToolTip="ttp_code" Name="code" Size="170,20"/>
+</Ctrls></GroupBox>
+<GroupBox cols="xs12 sm6 md4 lg3" Multiline="0" Name="GB_symbol_left"><Ctrls>
+<Label Align="Right" Text="symbol_left" Name="lb_symbol_left" Size="60,20"/>
+<TextBox Weight="170" Text="" ToolTip="ttp_symbol_left" Name="symbol_left" Size="170,20"/>
+</Ctrls></GroupBox>
+<BR AutoHeight="1"/><GroupBox cols="xs12 sm6 md4 lg3" Multiline="0" Name="GB_symbol_right"><Ctrls>
+<Label Align="Right" Text="symbol_right" Name="lb_symbol_right" Size="60,20"/>
+<TextBox Weight="170" Text="" ToolTip="ttp_symbol_right" Name="symbol_right" Size="170,20"/>
+</Ctrls></GroupBox>
+<GroupBox cols="xs12 sm6 md4 lg3" Multiline="0" Name="GB_decimal_place"><Ctrls>
+<Label Align="Right" Text="decimal_place" Name="lb_decimal_place" Size="60,20"/>
+<TextBox Weight="170" Text="" ToolTip="ttp_decimal_place" Name="decimal_place" Size="170,20"/>
+</Ctrls></GroupBox>
+<GroupBox cols="xs12 sm6 md4 lg3" Multiline="0" Name="GB_value"><Ctrls>
+<Label Align="Right" Text="value" Name="lb_value" Size="60,20"/>
+<TextBox Weight="170" Text="" ToolTip="ttp_value" Name="value" Size="170,20"/>
+</Ctrls></GroupBox>
+<BR AutoHeight="1"/><GroupBox cols="xs12 sm6 md4 lg3" Multiline="0" Name="GB_status"><Ctrls>
+<CheckBox Text="status" ToolTip="ttp_status" Name="status" Size="230,20"/>
+</Ctrls></GroupBox>
+<GroupBox cols="xs12 sm6 md4 lg3" Multiline="0" overlap="pre" Name="GB_date_modified" Visible="false"><Ctrls>
+<Label Align="Right" Text="date_modified" overlap="pre" Name="lb_date_modified" readonly="true" Size="60,20" Visible="false"/>
+<DateTime Weight="170" Text="" ToolTip="ttp_date_modified" overlap="pre" Name="date_modified" readonly="true" Size="170,20" Visible="false" Format="yyyy-MM-dd HH:mm:ss"/>
+</Ctrls></GroupBox>
+<GroupBox cols="xs12 sm6 md4 lg3" Multiline="0" overlap="pre" Name="GB_currency_id" Visible="false"><Ctrls>
+<Label Align="Right" Text="currency_id" overlap="pre" Name="lb_currency_id" readonly="true" Size="60,20" Visible="false"/>
+<TextBox Weight="170" Text="" ToolTip="ttp_currency_id" overlap="pre" Name="currency_id" readonly="true" Size="170,20" Visible="false"><OnEnChange><if cond="'%{currency_id}'"><SetVisible name="insertcurrency" Visible="0"/><SetVisible name="modifycurrency" Visible="1"/><else/><SetVisible name="insertcurrency" Visible="1"/><SetVisible name="modifycurrency" Visible="0"/></if></OnEnChange></TextBox>
+</Ctrls></GroupBox>
+</Ctrls></GroupBox>

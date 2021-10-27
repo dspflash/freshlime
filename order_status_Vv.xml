@@ -1,0 +1,17 @@
+﻿<GroupBox Name="GBDVorder_status" cols="xs12 sm12 md12 lg12"><Ctrls>
+<ListCtrl Name="order_status_vLst" ToolTip="ttp_order_status" Size="700,420" OnLoad="init" loadedclick="0">
+	<DbDetails >
+<DbTable>freshlime.order_status o left join freshlime.language l on o.language_id=l.language_id</DbTable>
+<Index>language_id</Index>
+<Data>o.order_status_id,l.name language_id,o.name</Data>
+<Order>order_status_id,language_id</Order></DbDetails>
+<operator refresh="1" firstpage="1" prepage="1" nextpage="1">
+<op text="modify"><DbDetails><Where>language_id='%{order_status_vLst[language_id]}'</Where></DbDetails><submit namelist="DbDetails" next="$this.order_status.order_statusLst"/></op>
+<op text="delete" needconfirm="1"><DbDetails>
+<DbTable>freshlime.order_status</DbTable>
+<Where>language_id='%{order_status_vLst[language_id]}'</Where>
+<queryFormat>delete from %{table} where %{where}</queryFormat></DbDetails>
+<submit namelist="DbDetails"/><submit/></op>
+</operator>
+</ListCtrl>
+</Ctrls></GroupBox>

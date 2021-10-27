@@ -1,0 +1,17 @@
+<GroupBox cols="xs12 sm12 md12 lg12" Name="GBOPVinouttype" Size="100,100"><Ctrls>
+<Button Text="delete" ToolTip="ttp_deleteinouttype" Name="deleteinouttype" Size="50,20">
+	<OnClick>
+	<DbDetails fcsm="1">
+<DbTable>freshlime.inouttype</DbTable>
+<Where>id_type='%{inouttypeLst[id_type]}'</Where>
+<queryFormat>delete from %{table} where %{where}</queryFormat></DbDetails>
+	<submit namelist="DbDetails"/><submit next="searchinouttype" function="click"/>
+	</OnClick>
+	</Button><TAB/>
+<Button Text="refresh" ToolTip="ttp_refreshinouttype" Name="searchinouttype" Size="50,20">
+			  <OnClick><submit next="inouttypeLst"/>	</OnClick>
+</Button>
+<TAB/><Button Text="firstpage" Name="FPinouttypeLst" OnClick="(inouttypeLst)GetPage(First)" Size="40,20"/>
+<Button Text="prepage" Name="PREinouttypeLst" OnClick="(inouttypeLst)GetPage(Pre)" Size="40,20"/>
+<Button Text="nextpage" Name="NPinouttypeLst" OnClick="(inouttypeLst)GetPage(Next)" Size="40,20"/>
+</Ctrls></GroupBox>

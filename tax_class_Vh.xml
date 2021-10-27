@@ -1,0 +1,12 @@
+﻿<GroupBox Name="GBDVtax_class" cols="xs12 sm12 md12 lg12" visible="0"><Ctrls>
+<ListCtrl Name="tax_classLst" ToolTip="ttp_tax_class" Size="70,20" visible="0" loadedclick="1">
+	<DbDetails fcsm="1">
+<DbTable>freshlime.tax_class</DbTable>
+<Index>tax_class_id</Index>
+<Data>title,description,date_added,date_modified,tax_class_id</Data>
+<Order>tax_class_id</Order></DbDetails>
+<OnClick>
+<if cond="%{tax_class_id}"><SetVisible name="inserttax_class" Visible="0"/><SetVisible name="modifytax_class" Visible="1"/></if>
+</OnClick>
+</ListCtrl>
+</Ctrls></GroupBox>

@@ -1,0 +1,22 @@
+﻿<GroupBox Name="GBDEDITtax_class"><Ctrls>
+<GroupBox Name="GB_title" Multiline="0" cols="xs12 sm6 md4 lg3"><Ctrls>
+<Label Name="lb_title" Size="60,20" Text="title" Align="Right"/>
+<TextBox Name="title" Size="170,20" Text="" Weight="170" ToolTip="ttp_title"></TextBox>
+</Ctrls></GroupBox>
+<GroupBox Name="GB_description" Multiline="0" cols="xs12 sm6 md4 lg3"><Ctrls>
+<Label Name="lb_description" Size="60,20" Text="description" Align="Right"/>
+<TextBox Name="description" Size="170,20" Text="" Weight="170" ToolTip="ttp_description"></TextBox>
+</Ctrls></GroupBox>
+<GroupBox Name="GB_date_added" Multiline="0" cols="xs12 sm6 md4 lg3" Visible="false" overlap="pre"><Ctrls>
+<Label Name="lb_date_added" Size="60,20" Text="date_added" Align="Right" Visible="false" overlap="pre" readonly="true"/>
+<DateTime Name="date_added" Format="yyyy-MM-dd HH:mm:ss" Size="170,20" Text="" Weight="170" ToolTip="ttp_date_added" Visible="false" overlap="pre" readonly="true"></DateTime>
+</Ctrls></GroupBox>
+<GroupBox Name="GB_date_modified" Multiline="0" cols="xs12 sm6 md4 lg3" Visible="false" overlap="pre"><Ctrls>
+<Label Name="lb_date_modified" Size="60,20" Text="date_modified" Align="Right" Visible="false" overlap="pre" readonly="true"/>
+<DateTime Name="date_modified" Format="yyyy-MM-dd HH:mm:ss" Size="170,20" Text="" Weight="170" ToolTip="ttp_date_modified" Visible="false" overlap="pre" readonly="true"></DateTime>
+</Ctrls></GroupBox>
+<GroupBox Name="GB_tax_class_id" Multiline="0" cols="xs12 sm6 md4 lg3" Visible="false" overlap="pre"><Ctrls>
+<Label Name="lb_tax_class_id" Size="60,20" Text="tax_class_id" Align="Right" Visible="false" overlap="pre" readonly="true"/>
+<TextBox Name="tax_class_id" Size="170,20" Text="" Weight="170" ToolTip="ttp_tax_class_id" Visible="false" overlap="pre" readonly="true"><OnEnChange><if cond="'%{tax_class_id}'"><SetVisible name="inserttax_class" Visible="0"/><SetVisible name="modifytax_class" Visible="1"/><else/><SetVisible name="inserttax_class" Visible="1"/><SetVisible name="modifytax_class" Visible="0"/></if></OnEnChange></TextBox>
+</Ctrls></GroupBox>
+</Ctrls></GroupBox>

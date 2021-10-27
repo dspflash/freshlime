@@ -1,0 +1,42 @@
+<GroupBox Name="GBDEDITcategory"><Ctrls>
+<GroupBox Name="GB_category_name" Multiline="0" cols="xs12 sm6 md4 lg3"><Ctrls>
+<Label Name="lb_category_name" Size="60,20" Text="category_name" Align="Right"/>
+<TextBox Name="category_name" Size="170,20" Text="" Weight="170" ToolTip="ttp_category_name"></TextBox>
+</Ctrls></GroupBox>
+<GroupBox Name="GB_parent_id" Multiline="0" cols="xs12 sm6 md4 lg3"><Ctrls>
+<Label Name="lb_parent_id" Size="60,20" Text="parent_id" Align="Right" onload="init"/>
+<ComboBox Name="parent_id" Size="170,100" Text="" Weight="170"  ToolTip="ttp_parent_id" onload="init">
+	<DbDetails>
+<DbTable>freshlime.category_description</DbTable>
+<Index>category_id</Index>
+<Data>name,category_id</Data>
+<Where></Where>
+<queryFormat></queryFormat></DbDetails></ComboBox>
+</Ctrls></GroupBox>
+<GroupBox Name="GB_status" Multiline="0" cols="xs12 sm6 md4 lg3"><Ctrls>
+<CheckBox Name="status" Size="230,20" Text="status" ToolTip="ttp_status"></CheckBox>
+</Ctrls></GroupBox>
+<GroupBox Name="GB_date_added" Multiline="0" cols="xs12 sm6 md4 lg3" Visible="false" overlap="pre"><Ctrls>
+<Label Name="lb_date_added" Size="60,20" Text="date_added" Align="Right" Visible="false" overlap="pre" readonly="true"/>
+<DateTime Name="date_added" Format="yyyy-MM-dd HH:mm:ss" Size="170,20" Text="" Weight="170" ToolTip="ttp_date_added" Visible="false" overlap="pre" readonly="true"></DateTime>
+</Ctrls></GroupBox>
+<GroupBox Name="GB_date_modified" Multiline="0" cols="xs12 sm6 md4 lg3" Visible="false" overlap="pre"><Ctrls>
+<Label Name="lb_date_modified" Size="60,20" Text="date_modified" Align="Right" Visible="false" overlap="pre" readonly="true"/>
+<DateTime Name="date_modified" Format="yyyy-MM-dd HH:mm:ss" Size="170,20" Text="" Weight="170" ToolTip="ttp_date_modified" Visible="false" overlap="pre" readonly="true"></DateTime>
+</Ctrls></GroupBox>
+<BR AutoHeight="1"/><GroupBox Name="GB_image" Multiline="0" cols="xs12 sm6 md4 lg3"><Ctrls>
+<Label Name="lb_image" Size="60,20" Text="image" Align="Right"/>
+<TextBox Name="image" Size="170,20" Text="" Weight="170" ToolTip="ttp_image"></TextBox>
+</Ctrls></GroupBox>
+<GroupBox Name="GB_sort_order" Multiline="0" cols="xs12 sm6 md4 lg3"><Ctrls>
+<Label Name="lb_sort_order" Size="60,20" Text="sort_order" Align="Right"/>
+<TextBox Name="sort_order" Size="170,20" Text="" Weight="170" ToolTip="ttp_sort_order"></TextBox>
+</Ctrls></GroupBox>
+<GroupBox Name="GB_top" Multiline="0" cols="xs12 sm6 md4 lg3"><Ctrls>
+<CheckBox Name="top" Size="230,20" Text="top" ToolTip="ttp_top"></CheckBox>
+</Ctrls></GroupBox>
+<GroupBox Name="GB_category_id" Multiline="0" cols="xs12 sm6 md4 lg3" Visible="false" overlap="pre"><Ctrls>
+<Label Name="lb_category_id" Size="60,20" Text="category_id" Align="Right" Visible="false" overlap="pre" readonly="true"/>
+<TextBox Name="category_id" Size="170,20" Text="" Weight="170" ToolTip="ttp_category_id" Visible="false" overlap="pre" readonly="true"><OnEnChange><if cond="'%{category_id}'"><SetVisible name="insertcategory" Visible="0"/><SetVisible name="modifycategory" Visible="1"/><else/><SetVisible name="insertcategory" Visible="1"/><SetVisible name="modifycategory" Visible="0"/></if></OnEnChange></TextBox>
+</Ctrls></GroupBox>
+</Ctrls></GroupBox>

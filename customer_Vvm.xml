@@ -1,0 +1,18 @@
+<GroupBox Name="GBDVcustomer" cols="xs12 sm12 md12 lg12"><Ctrls>
+<ListCtrl Name="customer_vLst" ToolTip="ttp_customer" Size="700,420" OnLoad="init" Heading="lastname,160;firstname,160;telephone,160;customer_group_id,120;fax,160;email,480;password,200;status,60;newsletter,60;ip,75;approved,60;date_added,150;customer_id,55;" loadedclick="0">
+	<DbDetails >
+<DbTable>freshlime.customer c left join freshlime.customer_group c0 on c.customer_group_id=c0.customer_group_id</DbTable>
+<Index>customer_id</Index>
+<Data>c.lastname,c.firstname,c.telephone,c0.name customer_group_id,c.fax,c.email,c.password,c.status,c.newsletter,c.ip,c.approved,c.date_added,c.customer_id</Data>
+<Order>customer_id</Order></DbDetails>
+<operator refresh="1" firstpage="1" prepage="1" nextpage="1">
+<op text="modify"><DbDetails><Where>customer_id='%{customer_vLst[customer_id]}'</Where></DbDetails><submit namelist="DbDetails" next="$this.customer.customerLst"/></op>
+<op text="address"><assign name="$this.address_V.customer_id" expr="%{customer_vLst[customer_id]}"/><submit next="$this.address_V.address_vLst"/></op>
+<op text="delete" needconfirm="1"><DbDetails>
+<DbTable>freshlime.customer</DbTable>
+<Where>customer_id='%{customer_vLst[customer_id]}'</Where>
+<queryFormat>delete from %{table} where %{where}</queryFormat></DbDetails>
+<submit namelist="DbDetails"/><submit/></op>
+</operator>
+</ListCtrl>
+</Ctrls></GroupBox>

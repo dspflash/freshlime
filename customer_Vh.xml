@@ -1,0 +1,12 @@
+<GroupBox Name="GBDVcustomer" cols="xs12 sm12 md12 lg12" visible="0"><Ctrls>
+<ListCtrl Name="customerLst" ToolTip="ttp_customer" Size="70,20" visible="0" loadedclick="1">
+	<DbDetails fcsm="1">
+<DbTable>freshlime.customer</DbTable>
+<Index>customer_id</Index>
+<Data>lastname,firstname,telephone,customer_group_id,fax,email,password,status,newsletter,ip,approved,date_added,customer_id</Data>
+<Order>customer_id</Order></DbDetails>
+<OnClick><assign name="customer_group_id[customer_group_id]" expr="%{customerLst[customer_group_id]}" function="SetSel"/>
+<if cond="%{customer_id}"><SetVisible name="insertcustomer" Visible="0"/><SetVisible name="modifycustomer" Visible="1"/></if>
+</OnClick>
+</ListCtrl>
+</Ctrls></GroupBox>

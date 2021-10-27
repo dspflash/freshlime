@@ -1,0 +1,17 @@
+<GroupBox Name="GBDVinouttype" cols="xs12 sm12 md12 lg12"><Ctrls>
+<ListCtrl Name="inouttype_vLst" ToolTip="ttp_inouttype" Size="700,420" OnLoad="init" Heading="name,50;id_type,20;" loadedclick="0">
+	<DbDetails >
+<DbTable>freshlime.inouttype i</DbTable>
+<Index>id_type</Index>
+<Data>i.name,i.id_type</Data>
+<Order>id_type</Order></DbDetails>
+<operator refresh="1" firstpage="1" prepage="1" nextpage="1">
+<op text="modify"><DbDetails><Where>id_type='%{inouttype_vLst[id_type]}'</Where></DbDetails><submit namelist="DbDetails" next="$this.inouttype.inouttypeLst"/></op>
+<op text="delete" needconfirm="1"><DbDetails>
+<DbTable>freshlime.inouttype</DbTable>
+<Where>id_type='%{inouttype_vLst[id_type]}'</Where>
+<queryFormat>delete from %{table} where %{where}</queryFormat></DbDetails>
+<submit namelist="DbDetails"/><submit/></op>
+</operator>
+</ListCtrl>
+</Ctrls></GroupBox>

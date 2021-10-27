@@ -1,0 +1,20 @@
+﻿<GroupBox Name="GBDEDITorder_status"><Ctrls>
+<GroupBox Name="GB_order_status_id" Multiline="0" cols="xs12 sm6 md4 lg3"><Ctrls>
+<Label Name="lb_order_status_id" Size="60,20" Text="order_status_id" Align="Right"/>
+<TextBox Name="order_status_id" Size="170,20" Text="" Weight="170" ToolTip="ttp_order_status_id"></TextBox>
+</Ctrls></GroupBox>
+<GroupBox Name="GB_language_id" Multiline="0" cols="xs12 sm6 md4 lg3"><Ctrls>
+<Label Name="lb_language_id" Size="60,20" Text="language_id" Align="Right"  onload="init"/>
+<ComboBox Name="language_id" Size="170,100" Text="" Weight="170"  ToolTip="ttp_language_id"  onload="init">
+	<DbDetails>
+<DbTable>freshlime.language</DbTable>
+<Index>language_id</Index>
+<Data>name,language_id</Data>
+<Where></Where>
+<queryFormat></queryFormat></DbDetails></ComboBox>
+</Ctrls></GroupBox>
+<GroupBox Name="GB_name" Multiline="0" cols="xs12 sm6 md4 lg3"><Ctrls>
+<Label Name="lb_name" Size="60,20" Text="name" Align="Right"/>
+<TextBox Name="name" Size="170,20" Text="" Weight="170" ToolTip="ttp_name"></TextBox>
+</Ctrls></GroupBox>
+</Ctrls></GroupBox>

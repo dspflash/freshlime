@@ -1,0 +1,17 @@
+<GroupBox Name="GBDVproduct_description" cols="xs12 sm12 md12 lg12"><Ctrls>
+<ListCtrl Name="product_description_vLst" ToolTip="ttp_product_description" Size="700,420" OnLoad="init" Heading="product_id,120;name,640;language_id,120;description,20;meta_description,640;meta_keyword,640;" loadedclick="0">
+	<DbDetails >
+<DbTable>freshlime.product_description p left join freshlime.product p0 on p.product_id=p0.product_id left join freshlime.language l on p.language_id=l.language_id</DbTable>
+<Index>language_id</Index>
+<Data>p0.product_name product_id,p.name,l.name language_id,p.description,p.meta_description,p.meta_keyword</Data>
+<Order>product_id,language_id</Order></DbDetails>
+<operator refresh="1" firstpage="1" prepage="1" nextpage="1">
+<op text="modify"><DbDetails><Where>language_id='%{product_description_vLst[language_id]}'</Where></DbDetails><submit namelist="DbDetails" next="$this.product_description.product_descriptionLst"/></op>
+<op text="delete" needconfirm="1"><DbDetails>
+<DbTable>freshlime.product_description</DbTable>
+<Where>language_id='%{product_description_vLst[language_id]}'</Where>
+<queryFormat>delete from %{table} where %{where}</queryFormat></DbDetails>
+<submit namelist="DbDetails"/><submit/></op>
+</operator>
+</ListCtrl>
+</Ctrls></GroupBox>

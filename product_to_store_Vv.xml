@@ -1,0 +1,17 @@
+﻿<GroupBox Name="GBDVproduct_to_store" cols="xs12 sm12 md12 lg12"><Ctrls>
+<ListCtrl Name="product_to_store_vLst" ToolTip="ttp_product_to_store" Size="700,420" OnLoad="init" loadedclick="0">
+	<DbDetails >
+<DbTable>freshlime.product_to_store p left join freshlime.product p0 on p.product_id=p0.product_id left join freshlime.inouttype i on p.typeattach=i.id_type</DbTable>
+<Index>idx</Index>
+<Data>p0.product_name product_id,p.store_id,i.name typeattach,p.idattach,p.quantityact,p.price,p.idx</Data>
+<Order>idx</Order></DbDetails>
+<operator refresh="1" firstpage="1" prepage="1" nextpage="1">
+<op text="modify"><DbDetails><Where>idx='%{product_to_store_vLst[idx]}'</Where></DbDetails><submit namelist="DbDetails" next="$this.product_to_store.product_to_storeLst"/></op>
+<op text="delete" needconfirm="1"><DbDetails>
+<DbTable>freshlime.product_to_store</DbTable>
+<Where>idx='%{product_to_store_vLst[idx]}'</Where>
+<queryFormat>delete from %{table} where %{where}</queryFormat></DbDetails>
+<submit namelist="DbDetails"/><submit/></op>
+</operator>
+</ListCtrl>
+</Ctrls></GroupBox>

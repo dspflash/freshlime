@@ -1,0 +1,17 @@
+<GroupBox cols="xs12 sm12 md12 lg12" Name="GBOPVreturn" Size="100,100"><Ctrls>
+<Button Text="delete" ToolTip="ttp_deletereturn" Name="deletereturn" Size="50,20">
+	<OnClick>
+	<DbDetails fcsm="1">
+<DbTable>freshlime.return</DbTable>
+<Where>return_id='%{returnLst[return_id]}'</Where>
+<queryFormat>delete from %{table} where %{where}</queryFormat></DbDetails>
+	<submit namelist="DbDetails"/><submit next="searchreturn" function="click"/>
+	</OnClick>
+	</Button><TAB/>
+<Button Text="refresh" ToolTip="ttp_refreshreturn" Name="searchreturn" Size="50,20">
+			  <OnClick><submit next="returnLst"/>	</OnClick>
+</Button>
+<TAB/><Button Text="firstpage" Name="FPreturnLst" OnClick="(returnLst)GetPage(First)" Size="40,20"/>
+<Button Text="prepage" Name="PREreturnLst" OnClick="(returnLst)GetPage(Pre)" Size="40,20"/>
+<Button Text="nextpage" Name="NPreturnLst" OnClick="(returnLst)GetPage(Next)" Size="40,20"/>
+</Ctrls></GroupBox>

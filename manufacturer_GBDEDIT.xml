@@ -1,0 +1,18 @@
+<GroupBox Name="GBDEDITmanufacturer"><Ctrls>
+<GroupBox cols="xs12 sm6 md4 lg3" Multiline="0" Name="GB_name"><Ctrls>
+<Label Align="Right" Text="name" Name="lb_name" Size="60,20"/>
+<TextBox Weight="170" Text="" ToolTip="ttp_name" Name="name" Size="170,20"/>
+</Ctrls></GroupBox>
+<GroupBox cols="xs12 sm6 md4 lg3" Multiline="0" overlap="pre" Name="GB_image" Visible="false"><Ctrls>
+<Label Align="Right" Text="image" overlap="pre" Name="lb_image" readonly="true" Size="60,20" Visible="false"/>
+<TextBox Weight="170" Text="" ToolTip="ttp_image" overlap="pre" Name="image" readonly="true" Size="170,20" Visible="false"/>
+</Ctrls></GroupBox>
+<GroupBox cols="xs12 sm6 md4 lg3" Multiline="0" Name="GB_sort_order"><Ctrls>
+<Label Align="Right" Text="sort_order" Name="lb_sort_order" Size="60,20"/>
+<TextBox Weight="170" Text="" ToolTip="ttp_sort_order" Name="sort_order" Size="170,20"/>
+</Ctrls></GroupBox>
+<GroupBox cols="xs12 sm6 md4 lg3" Multiline="0" overlap="pre" Name="GB_manufacturer_id" Visible="false"><Ctrls>
+<Label Align="Right" Text="manufacturer_id" overlap="pre" Name="lb_manufacturer_id" readonly="true" Size="60,20" Visible="false"/>
+<TextBox Weight="170" Text="" ToolTip="ttp_manufacturer_id" overlap="pre" Name="manufacturer_id" readonly="true" Size="170,20" Visible="false"><OnEnChange><if cond="'%{manufacturer_id}'"><SetVisible name="insertmanufacturer" Visible="0"/><SetVisible name="modifymanufacturer" Visible="1"/><else/><SetVisible name="insertmanufacturer" Visible="1"/><SetVisible name="modifymanufacturer" Visible="0"/></if></OnEnChange></TextBox>
+</Ctrls></GroupBox>
+</Ctrls></GroupBox>

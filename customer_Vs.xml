@@ -1,0 +1,58 @@
+<GroupBox Name="GBDEDITcustomer"><Ctrls>
+<GroupBox Name="GB_lastname" Multiline="0" cols="xs12 sm6 md4 lg3"><Ctrls>
+<Label Name="lb_lastname" Size="60,20" Text="lastname" Align="Right"/>
+<TextBox Name="lastname" Size="170,20" Text="" Weight="170" ToolTip="ttp_lastname"></TextBox>
+</Ctrls></GroupBox>
+<GroupBox Name="GB_firstname" Multiline="0" cols="xs12 sm6 md4 lg3"><Ctrls>
+<Label Name="lb_firstname" Size="60,20" Text="firstname" Align="Right"/>
+<TextBox Name="firstname" Size="170,20" Text="" Weight="170" ToolTip="ttp_firstname"></TextBox>
+</Ctrls></GroupBox>
+<GroupBox Name="GB_telephone" Multiline="0" cols="xs12 sm6 md4 lg3"><Ctrls>
+<Label Name="lb_telephone" Size="60,20" Text="telephone" Align="Right"/>
+<TextBox Name="telephone" Size="150,20" Text="" Weight="150" ToolTip="ttp_telephone"></TextBox>
+<MagicCtrl Name="dialtelephone" button="type:0" images=" ,data/startcall_green.png" Size="20,20" OnClick="nis3ucs:%{telephone}" ToolTip="DialToCall"/>
+</Ctrls></GroupBox>
+<BR AutoHeight="1"/><GroupBox Name="GB_customer_group_id" Multiline="0" cols="xs12 sm6 md4 lg3"><Ctrls>
+<Label Name="lb_customer_group_id" Size="60,20" Text="customer_group_id" Align="Right" onload="init"/>
+<ComboBox Name="customer_group_id" Size="170,100" Text="" Weight="170"  ToolTip="ttp_customer_group_id" onload="init">
+	<DbDetails>
+<DbTable>freshlime.customer_group</DbTable>
+<Index>customer_group_id</Index>
+<Data>name,customer_group_id</Data>
+<Where></Where>
+<queryFormat></queryFormat></DbDetails></ComboBox>
+</Ctrls></GroupBox>
+<GroupBox Name="GB_fax" Multiline="0" cols="xs12 sm6 md4 lg3"><Ctrls>
+<Label Name="lb_fax" Size="60,20" Text="fax" Align="Right"/>
+<TextBox Name="fax" Size="170,20" Text="" Weight="170" ToolTip="ttp_fax"></TextBox>
+</Ctrls></GroupBox>
+<GroupBox Name="GB_email" Multiline="0" cols="xs12 sm6 md4 lg3"><Ctrls>
+<Label Name="lb_email" Size="60,20" Text="email" Align="Right"/>
+<TextBox Name="email" Size="170,20" Text="" Weight="170" ToolTip="ttp_email"></TextBox>
+</Ctrls></GroupBox>
+<BR AutoHeight="1"/><GroupBox Name="GB_password" Multiline="0" cols="xs12 sm6 md4 lg3"><Ctrls>
+<Label Name="lb_password" Size="60,20" Text="password" Align="Right"/>
+<TextBox Name="password" Size="170,20" Text="" Weight="170" ToolTip="ttp_password"></TextBox>
+</Ctrls></GroupBox>
+<GroupBox Name="GB_status" Multiline="0" cols="xs12 sm6 md4 lg3"><Ctrls>
+<CheckBox Name="status" Size="230,20" Text="status" ToolTip="ttp_status" checked="true"></CheckBox>
+</Ctrls></GroupBox>
+<GroupBox Name="GB_newsletter" Multiline="0" cols="xs12 sm6 md4 lg3"><Ctrls>
+<CheckBox Name="newsletter" Size="230,20" Text="newsletter" ToolTip="ttp_newsletter"></CheckBox>
+</Ctrls></GroupBox>
+<GroupBox Name="GB_ip" Multiline="0" cols="xs12 sm6 md4 lg3" Visible="false" overlap="pre"><Ctrls>
+<Label Name="lb_ip" Size="60,20" Text="ip" Align="Right" Visible="false" overlap="pre" readonly="true"/>
+<TextBox Name="ip" Size="170,20" Text="" Weight="170" ToolTip="ttp_ip" Visible="false" overlap="pre" readonly="true"></TextBox>
+</Ctrls></GroupBox>
+<GroupBox Name="GB_approved" Multiline="0" cols="xs12 sm6 md4 lg3" Visible="false" overlap="pre"><Ctrls>
+<CheckBox Name="approved" Size="230,20" Text="approved" ToolTip="ttp_approved" Visible="false" overlap="pre" readonly="true"></CheckBox>
+</Ctrls></GroupBox>
+<GroupBox Name="GB_date_added" Multiline="0" cols="xs12 sm6 md4 lg3" Visible="false" overlap="pre"><Ctrls>
+<Label Name="lb_date_added" Size="60,20" Text="date_added" Align="Right" Visible="false" overlap="pre" readonly="true"/>
+<DateTime Name="date_added" Format="yyyy-MM-dd HH:mm:ss" Size="170,20" Text="" Weight="170" ToolTip="ttp_date_added" Visible="false" overlap="pre" readonly="true"></DateTime>
+</Ctrls></GroupBox>
+<GroupBox Name="GB_customer_id" Multiline="0" cols="xs12 sm6 md4 lg3" Visible="false" overlap="pre"><Ctrls>
+<Label Name="lb_customer_id" Size="60,20" Text="customer_id" Align="Right" Visible="false" overlap="pre" readonly="true"/>
+<TextBox Name="customer_id" Size="170,20" Text="" Weight="170" ToolTip="ttp_customer_id" Visible="false" overlap="pre" readonly="true"><OnEnChange><if cond="'%{customer_id}'"><SetVisible name="insertcustomer" Visible="0"/><SetVisible name="modifycustomer" Visible="1"/><else/><SetVisible name="insertcustomer" Visible="1"/><SetVisible name="modifycustomer" Visible="0"/></if></OnEnChange></TextBox>
+</Ctrls></GroupBox>
+</Ctrls></GroupBox>

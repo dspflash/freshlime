@@ -1,0 +1,17 @@
+﻿<GroupBox cols="xs12 sm12 md12 lg12" Name="GBOPVstock_status" Size="100,100"><Ctrls>
+<Button Text="delete" ToolTip="ttp_deletestock_status" Name="deletestock_status" Size="50,20">
+	<OnClick>
+	<DbDetails fcsm="1">
+<DbTable>freshlime.stock_status</DbTable>
+<Where>language_id='%{stock_statusLst[language_id]}' and stock_status_id='%{stock_statusLst[stock_status_id]}'</Where>
+<queryFormat>delete from %{table} where %{where}</queryFormat></DbDetails>
+	<submit namelist="DbDetails"/><submit next="searchstock_status" function="click"/>
+	</OnClick>
+	</Button><TAB/>
+<Button Text="refresh" ToolTip="ttp_refreshstock_status" Name="searchstock_status" Size="50,20">
+			  <OnClick><submit next="stock_statusLst"/>	</OnClick>
+</Button>
+<TAB/><TAB/><Button Text="firstpage" Name="FPstock_statusLst" OnClick="(stock_statusLst)GetPage(First)" Size="50,20"/>
+<TAB/><Button Text="prepage" Name="PREstock_statusLst" OnClick="(stock_statusLst)GetPage(Pre)" Size="50,20"/>
+<TAB/><Button Text="nextpage" Name="NPstock_statusLst" OnClick="(stock_statusLst)GetPage(Next)" Size="50,20"/>
+</Ctrls></GroupBox>

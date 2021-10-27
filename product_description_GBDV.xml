@@ -1,0 +1,10 @@
+<GroupBox cols="xs12 sm12 md12 lg12" Name="GBDVproduct_description"><Ctrls>
+<ListCtrl Heading="product_id,120;name,640;language_id,120;description,20;meta_description,640;meta_keyword,640;" loadedclick="0" ToolTip="ttp_product_description" Name="product_descriptionLst" Size="700,420">
+	<DbDetails fcsm="1">
+<DbTable>freshlime.product_description p left join freshlime.product p0 on p.product_id=p0.product_id left join freshlime.language l on p.language_id=l.language_id</DbTable>
+<Index>language_id</Index>
+<Data>p0.product_name product_id,p.name,l.name language_id,p.description,p.meta_description,p.meta_keyword</Data>
+<Order>product_id,language_id</Order></DbDetails>
+<operator firstpage="1" nextpage="1" refresh="1" prepage="1"><op/></operator>
+</ListCtrl>
+</Ctrls></GroupBox>

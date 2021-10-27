@@ -1,0 +1,12 @@
+<GroupBox Name="GBDVcategory_description" cols="xs12 sm12 md12 lg12" visible="0"><Ctrls>
+<ListCtrl Name="category_descriptionLst" ToolTip="ttp_category_description" Size="70,20" visible="0" loadedclick="1">
+	<DbDetails fcsm="1">
+<DbTable>freshlime.category_description</DbTable>
+<Index>language_id</Index>
+<Data>category_id,name,description,meta_description,meta_keyword,language_id</Data>
+<Order>category_id,language_id</Order></DbDetails>
+<OnClick><assign name="category_id[category_id]" expr="%{category_descriptionLst[category_id]}" function="SetSel"/><assign name="language_id[language_id]" expr="%{category_descriptionLst[language_id]}" function="SetSel"/>
+<if cond="%{language_id}"><SetVisible name="insertcategory_description" Visible="0"/><SetVisible name="modifycategory_description" Visible="1"/></if>
+</OnClick>
+</ListCtrl>
+</Ctrls></GroupBox>

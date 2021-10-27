@@ -1,0 +1,12 @@
+﻿<GroupBox Name="GBDVstock_status" cols="xs12 sm12 md12 lg12" visible="0"><Ctrls>
+<ListCtrl Name="stock_statusLst" ToolTip="ttp_stock_status" Size="70,20" visible="0" loadedclick="1">
+	<DbDetails fcsm="1">
+<DbTable>freshlime.stock_status</DbTable>
+<Index>stock_status_id</Index>
+<Data>name,language_id,stock_status_id</Data>
+<Order>language_id,stock_status_id</Order></DbDetails>
+<OnClick>
+<if cond="%{stock_status_id}"><SetVisible name="insertstock_status" Visible="0"/><SetVisible name="modifystock_status" Visible="1"/></if>
+</OnClick>
+</ListCtrl>
+</Ctrls></GroupBox>

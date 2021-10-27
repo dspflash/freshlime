@@ -1,0 +1,18 @@
+<GroupBox Name="GBDVorder_product" cols="xs12 sm12 md12 lg12"><Ctrls>
+<ListCtrl Name="order_product_vLst" ToolTip="ttp_order_product" Size="700,420" Heading="product_id,120;model,120;price,75;quantity,20;total,75;tax,75;reward,40;order_id,55;order_product_id,55;id_p2s,55;" loadedclick="0">
+	<DbDetails >
+<DbTable>freshlime.order_product o left join freshlime.product p on o.product_id=p.product_id</DbTable>
+<Index>order_product_id</Index>
+<Data>p.product_name product_id,o.model,o.price,o.quantity,o.total,o.tax,o.reward,o.order_id,o.order_product_id,o.id_p2s</Data>
+<Order>order_product_id</Order></DbDetails>
+<operator refresh="1" firstpage="1" prepage="1" nextpage="1">
+<op text="addone" mustselected="0"><if cond="!%{order_id}"><alert expr="order_id is Empty!"/><else/><submit next="$parent.order_product.GBDEDITorder_product" function="reset"/><assign name="$parent.order_product.order_id" expr="%{order_id}"/></if></op>
+<op text="modify"><DbDetails><Where>order_product_id='%{order_product_vLst[order_product_id]}'</Where></DbDetails><submit namelist="DbDetails" next="$parent.order_product.order_productLst"/></op>
+<op text="delete" needconfirm="1"><DbDetails>
+<DbTable>freshlime.order_product</DbTable>
+<Where>order_product_id='%{order_product_vLst[order_product_id]}'</Where>
+<queryFormat>delete from %{table} where %{where}</queryFormat></DbDetails>
+<submit namelist="DbDetails"/><submit/></op>
+</operator>
+</ListCtrl>
+</Ctrls></GroupBox>

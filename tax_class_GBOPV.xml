@@ -1,0 +1,17 @@
+﻿<GroupBox cols="xs12 sm12 md12 lg12" Name="GBOPVtax_class" Size="100,100"><Ctrls>
+<Button Text="delete" ToolTip="ttp_deletetax_class" Name="deletetax_class" Size="50,20">
+	<OnClick>
+	<DbDetails fcsm="1">
+<DbTable>freshlime.tax_class</DbTable>
+<Where>tax_class_id='%{tax_classLst[tax_class_id]}'</Where>
+<queryFormat>delete from %{table} where %{where}</queryFormat></DbDetails>
+	<submit namelist="DbDetails"/><submit next="searchtax_class" function="click"/>
+	</OnClick>
+	</Button><TAB/>
+<Button Text="refresh" ToolTip="ttp_refreshtax_class" Name="searchtax_class" Size="50,20">
+			  <OnClick><submit next="tax_classLst"/>	</OnClick>
+</Button>
+<TAB/><TAB/><Button Text="firstpage" Name="FPtax_classLst" OnClick="(tax_classLst)GetPage(First)" Size="50,20"/>
+<TAB/><Button Text="prepage" Name="PREtax_classLst" OnClick="(tax_classLst)GetPage(Pre)" Size="50,20"/>
+<TAB/><Button Text="nextpage" Name="NPtax_classLst" OnClick="(tax_classLst)GetPage(Next)" Size="50,20"/>
+</Ctrls></GroupBox>

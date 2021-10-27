@@ -1,0 +1,37 @@
+﻿<GroupBox cols="xs12 sm12 md12 lg12" Name="GBOPElength_class_description" Size="100,100"><Ctrls>
+<Button sqlpkinsert="length_class_id" Text="create" ToolTip="ttp_createlength_class_description" Name="insertlength_class_description" Size="50,20">
+	<OnClick>
+	<DbDetails mode="insert" fcsm="1">
+<DbTable>freshlime.length_class_description</DbTable>
+<Required>%{dataRequired}</Required>
+<Requireless>%{dataRequireless}</Requireless>
+<Data>language_id,title,unit,length_class_id[length_class_id]</Data>
+<DataEx/>
+<queryFormat>insert into %{table} %{data}</queryFormat></DbDetails>
+	<submit namelist="DbDetails"/><if cond="%{refreshAfterEdit}"><submit next="length_class_descriptionLst"/></if>
+	</OnClick>
+	</Button><TAB/>
+<Button Text="modify" ToolTip="ttp_modifylength_class_description" Name="modifylength_class_description" Size="50,20">
+	<OnClick>
+	<DbDetails mode="update" fcsm="1">
+<DbTable>freshlime.length_class_description</DbTable>
+<Required>%{dataRequired}</Required>
+<Requireless>%{dataRequireless}</Requireless>
+<Data>language_id,title,unit,length_class_id[length_class_id]</Data>
+<DataEx/>
+<Where>language_id='%{language_id}' and length_class_id='%{length_class_id}'</Where>
+<queryFormat>update %{table} set %{data} where %{where}</queryFormat></DbDetails>
+	<submit namelist="DbDetails"/><if cond="%{refreshAfterEdit}"><submit next="length_class_descriptionLst"/></if>
+	</OnClick>
+	</Button><TAB/>
+<Button Text="reset" ToolTip="ttp_resetlength_class_description" Name="resetlength_class_description" Size="50,20">
+	<OnClick>
+	<submit next="GBDEDITlength_class_description" function="reset"/>
+	</OnClick>
+	</Button><TAB/>
+<Button Text="gsearch" ToolTip="ttp_gsearchlength_class_description" Name="gsearchlength_class_description" Size="50,20" visible="false">
+	<OnClick>
+	<search next="length_class_descriptionLst" listed="0" prefixwhere="0" inputed="1"><zone_id op="(" ref=""/></search><submit next="GBDEDITlength_class_description" namelist="search" function="search"/>
+	</OnClick>
+	</Button><TAB/>
+</Ctrls></GroupBox>

@@ -1,0 +1,20 @@
+<Language name="product_to_category">
+<Lang name="product_to_category" value="product_to_category"/>
+<Lang name="category_id" value=""/>
+<Lang name="ttp_category_id" value=""/>
+<Lang name="product_id" value=""/>
+<Lang name="ttp_product_id" value=""/>
+<Lang name="ttp_operationproduct_to_category" value="操作"/>
+<Lang name="ttp_createproduct_to_category" value="新增"/>
+<Lang name="ttp_modifyproduct_to_category" value="修改"/>
+<Lang name="ttp_deleteproduct_to_category" value="删除"/>
+<Lang name="ttp_refreshproduct_to_category" value="刷新"/>
+<Lang name="operation" value="操作"/>
+<Lang name="create" value="新增"/>
+<Lang name="modify" value="修改"/>
+<Lang name="delete" value="删除"/>
+<Lang name="refresh" value="刷新"/>
+<Lang name="firstpage" value="首页"/>
+<Lang name="prepage" value="上页"/>
+<Lang name="nextpage" value="下页"/>
+</Language>

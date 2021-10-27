@@ -1,0 +1,17 @@
+﻿<GroupBox Name="GBDVreturn_reason" cols="xs12 sm12 md12 lg12"><Ctrls>
+<ListCtrl Name="return_reason_vLst" ToolTip="ttp_return_reason" Size="700,420" OnLoad="init" loadedclick="0">
+	<DbDetails >
+<DbTable>freshlime.return_reason r</DbTable>
+<Index>return_reason_id</Index>
+<Data>r.name,r.language_id,r.return_reason_id</Data>
+<Order>language_id,return_reason_id</Order></DbDetails>
+<operator refresh="1" firstpage="1" prepage="1" nextpage="1">
+<op text="modify"><DbDetails><Where>return_reason_id='%{return_reason_vLst[return_reason_id]}'</Where></DbDetails><submit namelist="DbDetails" next="$this.return_reason.return_reasonLst"/></op>
+<op text="delete" needconfirm="1"><DbDetails>
+<DbTable>freshlime.return_reason</DbTable>
+<Where>return_reason_id='%{return_reason_vLst[return_reason_id]}'</Where>
+<queryFormat>delete from %{table} where %{where}</queryFormat></DbDetails>
+<submit namelist="DbDetails"/><submit/></op>
+</operator>
+</ListCtrl>
+</Ctrls></GroupBox>

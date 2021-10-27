@@ -1,0 +1,14 @@
+<WndTap Name="manufacturer_v" Text="manufacturer">
+<WndTaps>
+<xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="manufacturer_Ve.xml" popup="1"/>
+</WndTaps>
+<xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="lan\manufacturer.xml"/>
+<Ctrls><GroupBox  Name="GBmanufacturer" id="manufacturer" Text="manufacturer" Size="100,100"><Ctrls>
+<xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="manufacturer_Vs.xml"/>
+<BR AutoHeight="1"/><GroupBox  Name="GBOPVmanufacturer" Size="100,20" cols="xs12 sm12 md12 lg12"><Ctrls>
+<Button Text="addone" ToolTip="ttp_addone" Name="addone" Size="50,20">	<OnClick><submit next="$this.manufacturer.GBDEDITmanufacturer" function="reset"/></OnClick>	</Button><TAB/>	
+<Button Text="reset" ToolTip="ttp_resetmanufacturer" Name="resetmanufacturer" Size="50,20">	<OnClick>	<submit next="GBDEDITmanufacturer" function="reset"/>	</OnClick>	</Button><TAB/>	
+<Button Text="gsearch" ToolTip="ttp_gsearchmanufacturer" Name="gsearchmanufacturer" Size="50,20" visible="true">	<OnClick>	<search next="manufacturer_vLst" listed="0" prefixwhere="0" inputed="1"></search><submit next="GBDEDITmanufacturer" namelist="search" function="search"/>	</OnClick>	</Button><TAB/></Ctrls></GroupBox>
+<BR AutoHeight="1"/><xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="manufacturer_Vv.xml"/>
+</Ctrls></GroupBox>
+</Ctrls></WndTap>

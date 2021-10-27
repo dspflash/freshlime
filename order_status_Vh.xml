@@ -1,0 +1,12 @@
+﻿<GroupBox Name="GBDVorder_status" cols="xs12 sm12 md12 lg12" visible="0"><Ctrls>
+<ListCtrl Name="order_statusLst" ToolTip="ttp_order_status" Size="70,20" visible="0" loadedclick="1">
+	<DbDetails fcsm="1">
+<DbTable>freshlime.order_status</DbTable>
+<Index>language_id</Index>
+<Data>order_status_id,language_id,name</Data>
+<Order>order_status_id,language_id</Order></DbDetails>
+<OnClick><assign name="language_id[language_id]" expr="%{order_statusLst[language_id]}" function="SetSel"/>
+<if cond="%{language_id}"><SetVisible name="insertorder_status" Visible="0"/><SetVisible name="modifyorder_status" Visible="1"/></if>
+</OnClick>
+</ListCtrl>
+</Ctrls></GroupBox>

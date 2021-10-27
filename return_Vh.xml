@@ -1,0 +1,12 @@
+<GroupBox Name="GBDVreturn" cols="xs12 sm12 md12 lg12" visible="0"><Ctrls>
+<ListCtrl Name="returnLst" ToolTip="ttp_return" Size="70,20" visible="0" loadedclick="1">
+	<DbDetails fcsm="1">
+<DbTable>freshlime.return</DbTable>
+<Index>return_id</Index>
+<Data>order_id,product_id,quantity,customer_id,telephone,email,return_reason_id,return_action_id,return_status_id,date_added,date_modified,comment,opened,return_id</Data>
+<Order>return_id</Order></DbDetails>
+<OnClick><assign name="order_id[order_id]" expr="%{returnLst[order_id]}" function="SetSel"/><assign name="product_id[product_id]" expr="%{returnLst[product_id]}" function="SetSel"/><assign name="return_reason_id[return_reason_id]" expr="%{returnLst[return_reason_id]}" function="SetSel"/><assign name="return_action_id[return_action_id]" expr="%{returnLst[return_action_id]}" function="SetSel"/><assign name="return_status_id[return_status_id]" expr="%{returnLst[return_status_id]}" function="SetSel"/>
+<if cond="%{return_id}"><SetVisible name="insertreturn" Visible="0"/><SetVisible name="modifyreturn" Visible="1"/></if>
+</OnClick>
+</ListCtrl>
+</Ctrls></GroupBox>

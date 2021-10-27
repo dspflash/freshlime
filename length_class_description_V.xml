@@ -1,0 +1,14 @@
+﻿<WndTap Name="length_class_description_v" Text="length_class_description">
+<WndTaps>
+<xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="length_class_description_Ve.xml" popup="1"/>
+</WndTaps>
+<xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="lan\length_class_description.xml"/>
+<Ctrls><GroupBox  Name="GBlength_class_description" id="length_class_description" Text="length_class_description" Size="100,100"><Ctrls>
+<xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="length_class_description_Vs.xml"/>
+<BR AutoHeight="1"/><GroupBox  Name="GBOPVlength_class_description" Size="100,20" cols="xs12 sm12 md12 lg12"><Ctrls>
+<Button Text="addone" ToolTip="ttp_addone" Name="addone" Size="50,20">	<OnClick><submit next="$this.length_class_description.GBDEDITlength_class_description" function="reset"/></OnClick>	</Button><TAB/>	
+<Button Text="reset" ToolTip="ttp_resetlength_class_description" Name="resetlength_class_description" Size="50,20">	<OnClick>	<submit next="GBDEDITlength_class_description" function="reset"/>	</OnClick>	</Button><TAB/>	
+<Button Text="gsearch" ToolTip="ttp_gsearchlength_class_description" Name="gsearchlength_class_description" Size="50,20" visible="true">	<OnClick>	<search next="length_class_description_vLst" listed="0" prefixwhere="0" inputed="1"></search><submit next="GBDEDITlength_class_description" namelist="search" function="search"/>	</OnClick>	</Button><TAB/></Ctrls></GroupBox>
+<BR AutoHeight="1"/><xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="length_class_description_Vv.xml"/>
+</Ctrls></GroupBox>
+</Ctrls></WndTap>

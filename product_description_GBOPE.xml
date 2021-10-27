@@ -1,0 +1,37 @@
+<GroupBox cols="xs12 sm12 md12 lg12" Name="GBOPEproduct_description" Size="100,100"><Ctrls>
+<Button sqlpkinsert="language_id" Text="create" ToolTip="ttp_createproduct_description" Name="insertproduct_description" Size="50,20">
+	<OnClick>
+	<DbDetails fcsm="1">
+<DbTable>freshlime.product_description</DbTable>
+<Required>%{dataRequired}</Required>
+<Requireless>%{dataRequireless}</Requireless>
+<Data>product_id[product_id],name,language_id[language_id],description,meta_description,meta_keyword</Data>
+<DataEx/>
+<queryFormat>insert into %{table} %{data}</queryFormat></DbDetails>
+	<submit namelist="DbDetails"/><if cond="%{refreshAfterEdit}"><submit next="product_descriptionLst"/></if>
+	</OnClick>
+	</Button><TAB/>
+<Button Text="modify" ToolTip="ttp_modifyproduct_description" Name="modifyproduct_description" Size="50,20">
+			  <OnClick>
+	<DbDetails fcsm="1">
+<DbTable>freshlime.product_description</DbTable>
+<Required>%{dataRequired}</Required>
+<Requireless>%{dataRequireless}</Requireless>
+<Data>product_id[product_id],name,language_id[language_id],description,meta_description,meta_keyword</Data>
+<DataEx/>
+<Where>product_id='%{product_id}' and language_id='%{language_id}'</Where>
+<queryFormat>update %{table} set %{data} where %{where}</queryFormat></DbDetails>
+	<submit namelist="DbDetails"/><if cond="%{refreshAfterEdit}"><submit next="product_descriptionLst"/></if>
+	</OnClick>
+	</Button><TAB/>
+<Button Text="reset" ToolTip="ttp_resetproduct_description" Name="resetproduct_description" Size="50,20">
+	<OnClick>
+	<submit next="GBDEDITproduct_description" function="reset"/>
+	</OnClick>
+	</Button><TAB/>
+<Button Text="gsearch" ToolTip="ttp_gsearchproduct_description" Name="gsearchproduct_description" Size="50,20" visible="false">
+			  <OnClick>
+	<search next="product_descriptionLst" listed="0" prefixwhere="0" inputed="1"><zone_id op="(" ref=""/></search><submit next="GBDEDITproduct_description" namelist="search" function="search"/>
+	</OnClick>
+	</Button><TAB/>
+</Ctrls></GroupBox>

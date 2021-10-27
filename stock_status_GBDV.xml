@@ -1,0 +1,17 @@
+﻿<GroupBox cols="xs12 sm12 md12 lg12" Name="GBDVstock_status"><Ctrls>
+<ListCtrl loadedclick="0" ToolTip="ttp_stock_status" Name="stock_statusLst" Size="700,420">
+	<DbDetails fcsm="1">
+<DbTable>freshlime.stock_status</DbTable>
+<Index>stock_status_id</Index>
+<Data>name,language_id,stock_status_id</Data>
+<Order>language_id,stock_status_id</Order></DbDetails>
+<operator firstpage="1" nextpage="1" refresh="1" prepage="1">
+<op text="modify"><DbDetails><Where>stock_status_id='%{stock_status_vLst[stock_status_id]}'</Where></DbDetails><submit next="$this.stock_status.stock_statusLst" namelist="DbDetails"/></op>
+<op text="delete" needconfirm="1"><DbDetails>
+<DbTable>freshlime.stock_status</DbTable>
+<Where>stock_status_id='%{stock_status_vLst[stock_status_id]}'</Where>
+<queryFormat>delete from %{table} where %{where}</queryFormat></DbDetails>
+<submit namelist="DbDetails"/><submit/></op>
+</operator>
+</ListCtrl>
+</Ctrls></GroupBox>

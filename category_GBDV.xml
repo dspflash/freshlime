@@ -1,0 +1,10 @@
+<GroupBox cols="xs12 sm12 md12 lg12" Name="GBDVcategory"><Ctrls>
+<ListCtrl Heading="category_name,100;parent_id,120;status,60;date_added,150;date_modified,150;image,640;sort_order,20;top,60;category_id,55;" loadedclick="0" ToolTip="ttp_category" Name="categoryLst" Size="700,420">
+	<DbDetails fcsm="1">
+<DbTable>freshlime.category c left join freshlime.category_description c0 on c.parent_id=c0.category_id</DbTable>
+<Index>category_id</Index>
+<Data>c.category_name,c0.name parent_id,c.status,c.date_added,c.date_modified,c.image,c.sort_order,c.top,c.category_id</Data>
+<Order>category_id</Order></DbDetails>
+<operator firstpage="1" nextpage="1" refresh="1" prepage="1"><op/></operator>
+</ListCtrl>
+</Ctrls></GroupBox>

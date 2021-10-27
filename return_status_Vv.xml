@@ -1,0 +1,17 @@
+﻿<GroupBox Name="GBDVreturn_status" cols="xs12 sm12 md12 lg12"><Ctrls>
+<ListCtrl Name="return_status_vLst" ToolTip="ttp_return_status" Size="700,420" OnLoad="init" loadedclick="0">
+	<DbDetails >
+<DbTable>freshlime.return_status r</DbTable>
+<Index>return_status_id</Index>
+<Data>r.name,r.language_id,r.return_status_id</Data>
+<Order>language_id,return_status_id</Order></DbDetails>
+<operator refresh="1" firstpage="1" prepage="1" nextpage="1">
+<op text="modify"><DbDetails><Where>return_status_id='%{return_status_vLst[return_status_id]}'</Where></DbDetails><submit namelist="DbDetails" next="$this.return_status.return_statusLst"/></op>
+<op text="delete" needconfirm="1"><DbDetails>
+<DbTable>freshlime.return_status</DbTable>
+<Where>return_status_id='%{return_status_vLst[return_status_id]}'</Where>
+<queryFormat>delete from %{table} where %{where}</queryFormat></DbDetails>
+<submit namelist="DbDetails"/><submit/></op>
+</operator>
+</ListCtrl>
+</Ctrls></GroupBox>

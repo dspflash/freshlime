@@ -1,0 +1,10 @@
+<GroupBox cols="xs12 sm12 md12 lg12" Name="GBDVcategory_to_store"><Ctrls>
+<ListCtrl Heading="category_id,120;store_id,120;" loadedclick="0" ToolTip="ttp_category_to_store" Name="category_to_storeLst" Size="700,420">
+	<DbDetails fcsm="1">
+<DbTable>freshlime.category_to_store c left join freshlime.category c0 on c.category_id=c0.category_id</DbTable>
+<Index>store_id</Index>
+<Data>c0.category_name category_id,c.store_id</Data>
+<Order>category_id,store_id</Order></DbDetails>
+<operator firstpage="1" nextpage="1" refresh="1" prepage="1"><op/></operator>
+</ListCtrl>
+</Ctrls></GroupBox>

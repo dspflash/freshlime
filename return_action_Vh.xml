@@ -1,0 +1,12 @@
+﻿<GroupBox Name="GBDVreturn_action" cols="xs12 sm12 md12 lg12" visible="0"><Ctrls>
+<ListCtrl Name="return_actionLst" ToolTip="ttp_return_action" Size="70,20" visible="0" loadedclick="1">
+	<DbDetails fcsm="1">
+<DbTable>freshlime.return_action</DbTable>
+<Index>return_action_id</Index>
+<Data>language_id,name,return_action_id</Data>
+<Order>language_id,return_action_id</Order></DbDetails>
+<OnClick>
+<if cond="%{return_action_id}"><SetVisible name="insertreturn_action" Visible="0"/><SetVisible name="modifyreturn_action" Visible="1"/></if>
+</OnClick>
+</ListCtrl>
+</Ctrls></GroupBox>

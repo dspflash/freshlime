@@ -1,0 +1,146 @@
+<GroupBox Name="GBDEDITproduct"><Ctrls>
+<GroupBox Name="Master" Text="Master" feature="tab"><Ctrls>
+<GroupBox Name="GB_product_name" Multiline="0" cols="xs12 sm6 md4 lg3"><Ctrls>
+<Label Name="lb_product_name" Size="60,20" Text="product_name" Align="Right"/>
+<TextBox Name="product_name" Size="170,20" Text="" Weight="170" ToolTip="ttp_product_name"></TextBox>
+</Ctrls></GroupBox>
+<GroupBox Name="GB_manufacturer_id" Multiline="0" cols="xs12 sm6 md4 lg3"><Ctrls>
+<Label Name="lb_manufacturer_id" Size="60,20" Text="manufacturer_id" Align="Right" onload="init"/>
+<ComboBox Name="manufacturer_id" Size="170,100" Text="" Weight="170"  ToolTip="ttp_manufacturer_id" onload="init">
+	<DbDetails>
+<DbTable>freshlime.manufacturer</DbTable>
+<Index>manufacturer_id</Index>
+<Data>name,manufacturer_id</Data>
+<Where></Where>
+<queryFormat></queryFormat></DbDetails></ComboBox>
+</Ctrls></GroupBox>
+<GroupBox Name="GB_status" Multiline="0" cols="xs12 sm6 md4 lg3"><Ctrls>
+<CheckBox Name="status" Size="230,20" Text="status" ToolTip="ttp_status"></CheckBox>
+</Ctrls></GroupBox>
+<BR AutoHeight="1"/><GroupBox Name="GB_upc" Multiline="0" cols="xs12 sm6 md4 lg3"><Ctrls>
+<Label Name="lb_upc" Size="60,20" Text="upc" Align="Right"/>
+<TextBox Name="upc" Size="170,20" Text="" Weight="170" ToolTip="ttp_upc"></TextBox>
+</Ctrls></GroupBox>
+<GroupBox Name="GB_sku" Multiline="0" cols="xs12 sm6 md4 lg3"><Ctrls>
+<Label Name="lb_sku" Size="60,20" Text="sku" Align="Right"/>
+<TextBox Name="sku" Size="170,20" Text="" Weight="170" ToolTip="ttp_sku"></TextBox>
+</Ctrls></GroupBox>
+<GroupBox Name="GB_price" Multiline="0" cols="xs12 sm6 md4 lg3"><Ctrls>
+<Label Name="lb_price" Size="60,20" Text="price" Align="Right"/>
+<TextBox Name="price" Size="170,20" Text="" Weight="170" ToolTip="ttp_price"></TextBox>
+</Ctrls></GroupBox>
+<BR AutoHeight="1"/><GroupBox Name="GB_quantity" Multiline="0" cols="xs12 sm6 md4 lg3"><Ctrls>
+<Label Name="lb_quantity" Size="60,20" Text="quantity" Align="Right"/>
+<TextBox Name="quantity" Size="170,20" Text="" Weight="170" ToolTip="ttp_quantity"></TextBox>
+</Ctrls></GroupBox>
+<GroupBox Name="GB_minimum" Multiline="0" cols="xs12 sm6 md4 lg3"><Ctrls>
+<Label Name="lb_minimum" Size="60,20" Text="minimum" Align="Right"/>
+<TextBox Name="minimum" Size="170,20" Text="" Weight="170" ToolTip="ttp_minimum"></TextBox>
+</Ctrls></GroupBox>
+<GroupBox Name="GB_date_available" Multiline="0" cols="xs12 sm6 md4 lg3"><Ctrls>
+<Label Name="lb_date_available" Size="60,20" Text="date_available" Align="Right"/>
+<DateTime Name="date_available" Format="yyyy-MM-dd HH:mm:ss" Size="170,20" Text="" Weight="170" ToolTip="ttp_date_available"></DateTime>
+</Ctrls></GroupBox>
+</Ctrls></GroupBox>
+<BR NULLHeight="1"/><GroupBox Name="Mesure" Text="Mesure" feature="tab"><Ctrls>
+<GroupBox Name="GB_weight" Multiline="0" cols="xs12 sm6 md4 lg3"><Ctrls>
+<Label Name="lb_weight" Size="60,20" Text="weight" Align="Right"/>
+<TextBox Name="weight" Size="170,20" Text="" Weight="170" ToolTip="ttp_weight"></TextBox>
+</Ctrls></GroupBox>
+<GroupBox Name="GB_weight_class_id" Multiline="0" cols="xs12 sm6 md4 lg3"><Ctrls>
+<Label Name="lb_weight_class_id" Size="60,20" Text="weight_class_id" Align="Right" onload="init"/>
+<ComboBox Name="weight_class_id" Size="170,100" Text="" Weight="170"  ToolTip="ttp_weight_class_id" onload="init">
+	<DbDetails>
+<DbTable>freshlime.weight_class_description</DbTable>
+<Index>weight_class_id</Index>
+<Data>title,weight_class_id</Data>
+<Where></Where>
+<queryFormat></queryFormat></DbDetails></ComboBox>
+</Ctrls></GroupBox>
+<GroupBox Name="GB_length" Multiline="0" cols="xs12 sm6 md4 lg3"><Ctrls>
+<Label Name="lb_length" Size="60,20" Text="length" Align="Right"/>
+<TextBox Name="length" Size="170,20" Text="" Weight="170" ToolTip="ttp_length"></TextBox>
+</Ctrls></GroupBox>
+<BR AutoHeight="1"/><GroupBox Name="GB_width" Multiline="0" cols="xs12 sm6 md4 lg3"><Ctrls>
+<Label Name="lb_width" Size="60,20" Text="width" Align="Right"/>
+<TextBox Name="width" Size="170,20" Text="" Weight="170" ToolTip="ttp_width"></TextBox>
+</Ctrls></GroupBox>
+<GroupBox Name="GB_height" Multiline="0" cols="xs12 sm6 md4 lg3"><Ctrls>
+<Label Name="lb_height" Size="60,20" Text="height" Align="Right"/>
+<TextBox Name="height" Size="170,20" Text="" Weight="170" ToolTip="ttp_height"></TextBox>
+</Ctrls></GroupBox>
+<GroupBox Name="GB_length_class_id" Multiline="0" cols="xs12 sm6 md4 lg3"><Ctrls>
+<Label Name="lb_length_class_id" Size="60,20" Text="length_class_id" Align="Right" onload="init"/>
+<ComboBox Name="length_class_id" Size="170,100" Text="" Weight="170"  ToolTip="ttp_length_class_id" onload="init">
+	<DbDetails>
+<DbTable>freshlime.length_class_description</DbTable>
+<Index>length_class_id</Index>
+<Data>title,length_class_id</Data>
+<Where></Where>
+<queryFormat></queryFormat></DbDetails></ComboBox>
+</Ctrls></GroupBox>
+<GroupBox Name="GB_date_added" Multiline="0" cols="xs12 sm6 md4 lg3" Visible="false" overlap="pre"><Ctrls>
+<Label Name="lb_date_added" Size="60,20" Text="date_added" Align="Right" Visible="false" overlap="pre" readonly="true"/>
+<DateTime Name="date_added" Format="yyyy-MM-dd HH:mm:ss" Size="170,20" Text="" Weight="170" ToolTip="ttp_date_added" Visible="false" overlap="pre" readonly="true"></DateTime>
+</Ctrls></GroupBox>
+<GroupBox Name="GB_date_modified" Multiline="0" cols="xs12 sm6 md4 lg3" Visible="false" overlap="pre"><Ctrls>
+<Label Name="lb_date_modified" Size="60,20" Text="date_modified" Align="Right" Visible="false" overlap="pre" readonly="true"/>
+<DateTime Name="date_modified" Format="yyyy-MM-dd HH:mm:ss" Size="170,20" Text="" Weight="170" ToolTip="ttp_date_modified" Visible="false" overlap="pre" readonly="true"></DateTime>
+</Ctrls></GroupBox>
+</Ctrls></GroupBox>
+<BR NULLHeight="1"/><GroupBox Name="ext" Text="ext" feature="tab"><Ctrls>
+<GroupBox Name="GB_model" Multiline="0" cols="xs12 sm6 md4 lg3"><Ctrls>
+<Label Name="lb_model" Size="60,20" Text="model" Align="Right"/>
+<TextBox Name="model" Size="170,20" Text="" Weight="170" ToolTip="ttp_model"></TextBox>
+</Ctrls></GroupBox>
+<GroupBox Name="GB_location" Multiline="0" cols="xs12 sm6 md4 lg3"><Ctrls>
+<Label Name="lb_location" Size="60,20" Text="location" Align="Right"/>
+<TextBox Name="location" Size="170,20" Text="" Weight="170" ToolTip="ttp_location"></TextBox>
+</Ctrls></GroupBox>
+<GroupBox Name="GB_stock_status_id" Multiline="0" cols="xs12 sm6 md4 lg3" Visible="false" overlap="pre"><Ctrls>
+<Label Name="lb_stock_status_id" Size="60,20" Text="stock_status_id" Align="Right" Visible="false" overlap="pre" readonly="true"/>
+<TextBox Name="stock_status_id" Size="170,20" Text="" Weight="170" ToolTip="ttp_stock_status_id" Visible="false" overlap="pre" readonly="true">
+	<DbDetails>
+<DbTable>freshlime.stock_status</DbTable>
+<Index>stock_status_id</Index>
+<Data>name,stock_status_id</Data>
+<Where></Where>
+<queryFormat></queryFormat></DbDetails></TextBox>
+</Ctrls></GroupBox>
+<GroupBox Name="GB_image" Multiline="0" cols="xs12 sm6 md4 lg3"><Ctrls>
+<Label Name="lb_image" Size="60,20" Text="image" Align="Right"/>
+<TextBox Name="image" Size="170,20" Text="" Weight="170" ToolTip="ttp_image"></TextBox>
+</Ctrls></GroupBox>
+<BR AutoHeight="1"/><GroupBox Name="GB_shipping" Multiline="0" cols="xs12 sm6 md4 lg3"><Ctrls>
+<CheckBox Name="shipping" Size="230,20" Text="shipping" ToolTip="ttp_shipping"></CheckBox>
+</Ctrls></GroupBox>
+<GroupBox Name="GB_points" Multiline="0" cols="xs12 sm6 md4 lg3"><Ctrls>
+<Label Name="lb_points" Size="60,20" Text="points" Align="Right"/>
+<TextBox Name="points" Size="170,20" Text="" Weight="170" ToolTip="ttp_points"></TextBox>
+</Ctrls></GroupBox>
+<GroupBox Name="GB_tax_class_id" Multiline="0" cols="xs12 sm6 md4 lg3"><Ctrls>
+<Label Name="lb_tax_class_id" Size="60,20" Text="tax_class_id" Align="Right" onload="init"/>
+<ComboBox Name="tax_class_id" Size="170,100" Text="" Weight="170"  ToolTip="ttp_tax_class_id" onload="init">
+	<DbDetails>
+<DbTable>freshlime.tax_class</DbTable>
+<Index>tax_class_id</Index>
+<Data>title,tax_class_id</Data>
+<Where></Where>
+<queryFormat></queryFormat></DbDetails></ComboBox>
+</Ctrls></GroupBox>
+<BR AutoHeight="1"/><GroupBox Name="GB_subtract" Multiline="0" cols="xs12 sm6 md4 lg3"><Ctrls>
+<CheckBox Name="subtract" Size="230,20" Text="subtract" ToolTip="ttp_subtract"></CheckBox>
+</Ctrls></GroupBox>
+<GroupBox Name="GB_sort_order" Multiline="0" cols="xs12 sm6 md4 lg3"><Ctrls>
+<Label Name="lb_sort_order" Size="60,20" Text="sort_order" Align="Right"/>
+<TextBox Name="sort_order" Size="170,20" Text="" Weight="170" ToolTip="ttp_sort_order"></TextBox>
+</Ctrls></GroupBox>
+<GroupBox Name="GB_viewed" Multiline="0" cols="xs12 sm6 md4 lg3"><Ctrls>
+<Label Name="lb_viewed" Size="60,20" Text="viewed" Align="Right"/>
+<TextBox Name="viewed" Size="170,20" Text="" Weight="170" ToolTip="ttp_viewed"></TextBox>
+</Ctrls></GroupBox>
+<GroupBox Name="GB_product_id" Multiline="0" cols="xs12 sm6 md4 lg3" Visible="false" overlap="pre"><Ctrls>
+<Label Name="lb_product_id" Size="60,20" Text="product_id" Align="Right" Visible="false" overlap="pre" readonly="true"/>
+<TextBox Name="product_id" Size="170,20" Text="" Weight="170" ToolTip="ttp_product_id" Visible="false" overlap="pre" readonly="true"><OnEnChange><if cond="'%{product_id}'"><SetVisible name="insertproduct" Visible="0"/><SetVisible name="modifyproduct" Visible="1"/><else/><SetVisible name="insertproduct" Visible="1"/><SetVisible name="modifyproduct" Visible="0"/></if></OnEnChange></TextBox>
+</Ctrls></GroupBox>
+</Ctrls></GroupBox></Ctrls></GroupBox>

@@ -1,0 +1,10 @@
+<GroupBox cols="xs12 sm12 md12 lg12" Name="GBDVinouttype"><Ctrls>
+<ListCtrl Heading="name,50;id_type,20;" loadedclick="0" ToolTip="ttp_inouttype" Name="inouttypeLst" Size="700,420">
+	<DbDetails fcsm="1">
+<DbTable>freshlime.inouttype</DbTable>
+<Index>id_type</Index>
+<Data>name,id_type</Data>
+<Order>id_type</Order></DbDetails>
+<operator firstpage="1" nextpage="1" refresh="1" prepage="1"><op/></operator>
+</ListCtrl>
+</Ctrls></GroupBox>

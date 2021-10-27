@@ -1,0 +1,37 @@
+<GroupBox cols="xs12 sm12 md12 lg12" Name="GBOPEmanufacturer" Size="100,100"><Ctrls>
+<Button sqlpkinsert="manufacturer_id" Text="create" ToolTip="ttp_createmanufacturer" Name="insertmanufacturer" Size="50,20">
+	<OnClick>
+	<DbDetails fcsm="1">
+<DbTable>freshlime.manufacturer</DbTable>
+<Required>%{dataRequired}</Required>
+<Requireless>%{dataRequireless}</Requireless>
+<Data>name,sort_order</Data>
+<DataEx/>
+<queryFormat>insert into %{table} %{data}</queryFormat></DbDetails>
+	<submit namelist="DbDetails"/><if cond="%{refreshAfterEdit}"><submit next="manufacturerLst"/></if>
+	</OnClick>
+	</Button><TAB/>
+<Button Text="modify" ToolTip="ttp_modifymanufacturer" Name="modifymanufacturer" Size="50,20">
+			  <OnClick>
+	<DbDetails fcsm="1">
+<DbTable>freshlime.manufacturer</DbTable>
+<Required>%{dataRequired}</Required>
+<Requireless>%{dataRequireless}</Requireless>
+<Data>name,sort_order</Data>
+<DataEx/>
+<Where>manufacturer_id='%{manufacturer_id}'</Where>
+<queryFormat>update %{table} set %{data} where %{where}</queryFormat></DbDetails>
+	<submit namelist="DbDetails"/><if cond="%{refreshAfterEdit}"><submit next="manufacturerLst"/></if>
+	</OnClick>
+	</Button><TAB/>
+<Button Text="reset" ToolTip="ttp_resetmanufacturer" Name="resetmanufacturer" Size="50,20">
+	<OnClick>
+	<submit next="GBDEDITmanufacturer" function="reset"/>
+	</OnClick>
+	</Button><TAB/>
+<Button Text="gsearch" ToolTip="ttp_gsearchmanufacturer" Name="gsearchmanufacturer" Size="50,20" visible="false">
+			  <OnClick>
+	<search next="manufacturerLst" listed="0" prefixwhere="0" inputed="1"><zone_id op="(" ref=""/></search><submit next="GBDEDITmanufacturer" namelist="search" function="search"/>
+	</OnClick>
+	</Button><TAB/>
+</Ctrls></GroupBox>

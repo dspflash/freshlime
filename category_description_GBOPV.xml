@@ -1,0 +1,17 @@
+<GroupBox cols="xs12 sm12 md12 lg12" Name="GBOPVcategory_description" Size="100,100"><Ctrls>
+<Button Text="delete" ToolTip="ttp_deletecategory_description" Name="deletecategory_description" Size="50,20">
+	<OnClick>
+	<DbDetails fcsm="1">
+<DbTable>freshlime.category_description</DbTable>
+<Where>category_id='%{category_descriptionLst[category_id]}' and language_id='%{category_descriptionLst[language_id]}'</Where>
+<queryFormat>delete from %{table} where %{where}</queryFormat></DbDetails>
+	<submit namelist="DbDetails"/><submit next="searchcategory_description" function="click"/>
+	</OnClick>
+	</Button><TAB/>
+<Button Text="refresh" ToolTip="ttp_refreshcategory_description" Name="searchcategory_description" Size="50,20">
+			  <OnClick><submit next="category_descriptionLst"/>	</OnClick>
+</Button>
+<TAB/><Button Text="firstpage" Name="FPcategory_descriptionLst" OnClick="(category_descriptionLst)GetPage(First)" Size="40,20"/>
+<Button Text="prepage" Name="PREcategory_descriptionLst" OnClick="(category_descriptionLst)GetPage(Pre)" Size="40,20"/>
+<Button Text="nextpage" Name="NPcategory_descriptionLst" OnClick="(category_descriptionLst)GetPage(Next)" Size="40,20"/>
+</Ctrls></GroupBox>

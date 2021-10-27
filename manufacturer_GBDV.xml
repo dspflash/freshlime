@@ -1,0 +1,10 @@
+<GroupBox cols="xs12 sm12 md12 lg12" Name="GBDVmanufacturer"><Ctrls>
+<ListCtrl Heading="name,320;image,640;sort_order,20;manufacturer_id,55;" loadedclick="0" ToolTip="ttp_manufacturer" Name="manufacturerLst" Size="700,420">
+	<DbDetails fcsm="1">
+<DbTable>freshlime.manufacturer</DbTable>
+<Index>manufacturer_id</Index>
+<Data>name,image,sort_order,manufacturer_id</Data>
+<Order>manufacturer_id</Order></DbDetails>
+<operator firstpage="1" nextpage="1" refresh="1" prepage="1"><op/></operator>
+</ListCtrl>
+</Ctrls></GroupBox>

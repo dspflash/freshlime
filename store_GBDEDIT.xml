@@ -1,0 +1,14 @@
+<GroupBox Name="GBDEDITstore"><Ctrls>
+<GroupBox cols="xs12 sm6 md4 lg3" Multiline="0" Name="GB_name"><Ctrls>
+<Label Align="Right" Text="name" Name="lb_name" Size="60,20"/>
+<TextBox Weight="170" Text="" ToolTip="ttp_name" Name="name" Size="170,20"/>
+</Ctrls></GroupBox>
+<GroupBox cols="xs12 sm6 md4 lg3" Multiline="0" Name="GB_address"><Ctrls>
+<Label Align="Right" Text="address" Name="lb_address" Size="60,20"/>
+<TextBox Weight="170" Text="" ToolTip="ttp_address" Name="address" Size="170,20"/>
+</Ctrls></GroupBox>
+<GroupBox cols="xs12 sm6 md4 lg3" Multiline="0" overlap="pre" Name="GB_store_id" Visible="false"><Ctrls>
+<Label Align="Right" Text="store_id" overlap="pre" Name="lb_store_id" readonly="true" Size="60,20" Visible="false"/>
+<TextBox Weight="170" Text="" ToolTip="ttp_store_id" overlap="pre" Name="store_id" readonly="true" Size="170,20" Visible="false"><OnEnChange><if cond="'%{store_id}'"><SetVisible name="insertstore" Visible="0"/><SetVisible name="modifystore" Visible="1"/><else/><SetVisible name="insertstore" Visible="1"/><SetVisible name="modifystore" Visible="0"/></if></OnEnChange></TextBox>
+</Ctrls></GroupBox>
+</Ctrls></GroupBox>

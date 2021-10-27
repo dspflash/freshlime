@@ -1,0 +1,37 @@
+<GroupBox cols="xs12 sm12 md12 lg12" Name="GBOPEproduct" Size="100,100"><Ctrls>
+<Button sqlpkinsert="product_id" Text="create" ToolTip="ttp_createproduct" Name="insertproduct" Size="50,20">
+	<OnClick>
+	<DbDetails fcsm="1">
+<DbTable>freshlime.product</DbTable>
+<Required>%{dataRequired}</Required>
+<Requireless>%{dataRequireless}</Requireless>
+<Data>product_name,manufacturer_id[manufacturer_id],status,upc,sku,price,quantity,minimum,date_available,weight,weight_class_id[weight_class_id],length,width,height,length_class_id[length_class_id],model,location,image,shipping,points,tax_class_id[tax_class_id],subtract,sort_order,viewed</Data>
+<DataEx>date_added,date_modified;now(),now()</DataEx>
+<queryFormat>insert into %{table} %{data}</queryFormat></DbDetails>
+	<submit namelist="DbDetails"/><if cond="%{refreshAfterEdit}"><submit next="productLst"/></if>
+	</OnClick>
+	</Button><TAB/>
+<Button Text="modify" ToolTip="ttp_modifyproduct" Name="modifyproduct" Size="50,20">
+			  <OnClick>
+	<DbDetails fcsm="1">
+<DbTable>freshlime.product</DbTable>
+<Required>%{dataRequired}</Required>
+<Requireless>%{dataRequireless}</Requireless>
+<Data>product_name,manufacturer_id[manufacturer_id],status,upc,sku,price,quantity,minimum,date_available,weight,weight_class_id[weight_class_id],length,width,height,length_class_id[length_class_id],model,location,image,shipping,points,tax_class_id[tax_class_id],subtract,sort_order,viewed</Data>
+<DataEx>date_modified;now()</DataEx>
+<Where>product_id='%{product_id}'</Where>
+<queryFormat>update %{table} set %{data} where %{where}</queryFormat></DbDetails>
+	<submit namelist="DbDetails"/><if cond="%{refreshAfterEdit}"><submit next="productLst"/></if>
+	</OnClick>
+	</Button><TAB/>
+<Button Text="reset" ToolTip="ttp_resetproduct" Name="resetproduct" Size="50,20">
+	<OnClick>
+	<submit next="GBDEDITproduct" function="reset"/>
+	</OnClick>
+	</Button><TAB/>
+<Button Text="gsearch" ToolTip="ttp_gsearchproduct" Name="gsearchproduct" Size="50,20" visible="false">
+			  <OnClick>
+	<search next="productLst" listed="0" prefixwhere="0" inputed="1"><zone_id op="(" ref=""/></search><submit next="GBDEDITproduct" namelist="search" function="search"/>
+	</OnClick>
+	</Button><TAB/>
+</Ctrls></GroupBox>

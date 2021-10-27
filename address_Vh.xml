@@ -1,0 +1,12 @@
+﻿<GroupBox Name="GBDVaddress" cols="xs12 sm12 md12 lg12" visible="0"><Ctrls>
+<ListCtrl Name="addressLst" ToolTip="ttp_address" Size="70,20" visible="0" loadedclick="1">
+	<DbDetails fcsm="1">
+<DbTable>freshlime.address</DbTable>
+<Index>address_id</Index>
+<Data>country_id,city,zone_id,address_1,postcode,address_id</Data>
+<Order>address_id</Order></DbDetails>
+<OnClick><assign name="country_id[country_id]" expr="%{addressLst[country_id]}" function="SetSel"/><assign name="city[zone_id]" expr="%{addressLst[city]}" function="SetSel"/><assign name="zone_id[zone_id]" expr="%{addressLst[zone_id]}" function="SetSel"/>
+<if cond="%{address_id}"><SetVisible name="insertaddress" Visible="0"/><SetVisible name="modifyaddress" Visible="1"/></if>
+</OnClick>
+</ListCtrl>
+</Ctrls></GroupBox>

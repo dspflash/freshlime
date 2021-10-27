@@ -1,0 +1,17 @@
+<GroupBox Name="GBDVreturn" cols="xs12 sm12 md12 lg12"><Ctrls>
+<ListCtrl Name="return_vLst" ToolTip="ttp_return" Size="700,420" OnLoad="init" Heading="order_id,120;product_id,120;quantity,20;customer_id,120;telephone,160;email,480;return_reason_id,120;return_action_id,120;return_status_id,120;date_added,150;date_modified,150;comment,20;opened,60;return_id,55;" loadedclick="0">
+	<DbDetails >
+<DbTable>freshlime.return r left join freshlime.order o on r.order_id=o.order_id left join freshlime.order_product o0 on r.product_id=o0.product_id left join freshlime.return_reason r0 on r.return_reason_id=r0.return_reason_id left join freshlime.return_action r1 on r.return_action_id=r1.return_action_id left join freshlime.return_status r2 on r.return_status_id=r2.return_status_id</DbTable>
+<Index>return_id</Index>
+<Data>o.invoice_no order_id,o0.name product_id,r.quantity,r.customer_id,r.telephone,r.email,r0.name return_reason_id,r1.name return_action_id,r2.name return_status_id,r.date_added,r.date_modified,r.comment,r.opened,r.return_id</Data>
+<Order>return_id</Order></DbDetails>
+<operator refresh="1" firstpage="1" prepage="1" nextpage="1">
+<op text="modify"><DbDetails><Where>return_id='%{return_vLst[return_id]}'</Where></DbDetails><submit namelist="DbDetails" next="$this.return.returnLst"/></op>
+<op text="delete" needconfirm="1"><DbDetails>
+<DbTable>freshlime.return</DbTable>
+<Where>return_id='%{return_vLst[return_id]}'</Where>
+<queryFormat>delete from %{table} where %{where}</queryFormat></DbDetails>
+<submit namelist="DbDetails"/><submit/></op>
+</operator>
+</ListCtrl>
+</Ctrls></GroupBox>

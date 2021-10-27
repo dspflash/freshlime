@@ -1,0 +1,17 @@
+<GroupBox Name="GBDVstore" cols="xs12 sm12 md12 lg12"><Ctrls>
+<ListCtrl Name="store_vLst" ToolTip="ttp_store" Size="700,420" OnLoad="init" Heading="name,320;address,500;store_id,55;" loadedclick="0">
+	<DbDetails >
+<DbTable>freshlime.store s</DbTable>
+<Index>store_id</Index>
+<Data>s.name,s.address,s.store_id</Data>
+<Order>store_id</Order></DbDetails>
+<operator refresh="1" firstpage="1" prepage="1" nextpage="1">
+<op text="modify"><DbDetails><Where>store_id='%{store_vLst[store_id]}'</Where></DbDetails><submit namelist="DbDetails" next="$this.store.storeLst"/></op>
+<op text="delete" needconfirm="1"><DbDetails>
+<DbTable>freshlime.store</DbTable>
+<Where>store_id='%{store_vLst[store_id]}'</Where>
+<queryFormat>delete from %{table} where %{where}</queryFormat></DbDetails>
+<submit namelist="DbDetails"/><submit/></op>
+</operator>
+</ListCtrl>
+</Ctrls></GroupBox>

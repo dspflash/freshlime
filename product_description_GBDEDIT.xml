@@ -1,0 +1,38 @@
+<GroupBox Name="GBDEDITproduct_description"><Ctrls>
+<GroupBox cols="xs12 sm6 md4 lg3" Multiline="0" Name="GB_product_id"><Ctrls>
+<Label Align="Right" Text="product_id" Name="lb_product_id" Size="60,20"/>
+<ComboBox Weight="170" Text="" ToolTip="ttp_product_id" Name="product_id" Size="170,100">
+	<DbDetails>
+<DbTable>freshlime.product</DbTable>
+<Index>product_id</Index>
+<Data>product_name,product_id</Data>
+<Where/>
+<queryFormat/></DbDetails></ComboBox>
+</Ctrls></GroupBox>
+<GroupBox cols="xs12 sm6 md4 lg3" Multiline="0" Name="GB_name"><Ctrls>
+<Label Align="Right" Text="name" Name="lb_name" Size="60,20"/>
+<TextBox Weight="170" Text="" ToolTip="ttp_name" Name="name" Size="170,20"/>
+</Ctrls></GroupBox>
+<GroupBox cols="xs12 sm6 md4 lg3" Multiline="0" Name="GB_language_id"><Ctrls>
+<Label Align="Right" Text="language_id" onload="init" Name="lb_language_id" Size="60,20"/>
+<ComboBox Weight="170" Text="" ToolTip="ttp_language_id" onload="init" Name="language_id" Size="170,100">
+	<DbDetails>
+<DbTable>freshlime.language</DbTable>
+<Index>language_id</Index>
+<Data>name,language_id</Data>
+<Where/>
+<queryFormat/></DbDetails></ComboBox>
+</Ctrls></GroupBox>
+<BR AutoHeight="1"/><GroupBox cols="xs12 sm6 md4 lg3" Multiline="0" Name="GB_description"><Ctrls>
+<Label Align="Right" Text="description" Name="lb_description" Size="60,20"/>
+<TextBox Weight="170" Text="" ToolTip="ttp_description" Name="description" Size="170,20"/>
+</Ctrls></GroupBox>
+<GroupBox cols="xs12 sm6 md4 lg3" Multiline="0" Name="GB_meta_description"><Ctrls>
+<Label Align="Right" Text="meta_description" Name="lb_meta_description" Size="60,20"/>
+<TextBox Weight="170" Text="" ToolTip="ttp_meta_description" Name="meta_description" Size="170,20"/>
+</Ctrls></GroupBox>
+<GroupBox cols="xs12 sm6 md4 lg3" Multiline="0" Name="GB_meta_keyword"><Ctrls>
+<Label Align="Right" Text="meta_keyword" Name="lb_meta_keyword" Size="60,20"/>
+<TextBox Weight="170" Text="" ToolTip="ttp_meta_keyword" Name="meta_keyword" Size="170,20"/>
+</Ctrls></GroupBox>
+</Ctrls></GroupBox>

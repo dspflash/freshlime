@@ -1,0 +1,22 @@
+<GroupBox Name="GBDEDITcategory_to_store"><Ctrls>
+<GroupBox cols="xs12 sm6 md4 lg3" Multiline="0" Name="GB_category_id"><Ctrls>
+<Label Align="Right" Text="category_id" Name="lb_category_id" Size="60,20"/>
+<ComboBox Weight="170" Text="" ToolTip="ttp_category_id" Name="category_id" Size="170,100">
+	<DbDetails>
+<DbTable>freshlime.category</DbTable>
+<Index>category_id</Index>
+<Data>category_name,category_id</Data>
+<Where/>
+<queryFormat/></DbDetails></ComboBox>
+</Ctrls></GroupBox>
+<GroupBox cols="xs12 sm6 md4 lg3" Multiline="0" Name="GB_store_id"><Ctrls>
+<Label Align="Right" Text="store_id" onload="init" Name="lb_store_id" Size="60,20"/>
+<ComboBox Weight="170" Text="" ToolTip="ttp_store_id" onload="init" Name="store_id" Size="170,100">
+	<DbDetails>
+<DbTable>freshlime.store</DbTable>
+<Index/>
+<Data>name,store_id</Data>
+<Where/>
+<queryFormat/></DbDetails></ComboBox>
+</Ctrls></GroupBox>
+</Ctrls></GroupBox>

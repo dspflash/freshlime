@@ -1,0 +1,12 @@
+﻿<GroupBox Name="GBDVlength_class_description" cols="xs12 sm12 md12 lg12" visible="0"><Ctrls>
+<ListCtrl Name="length_class_descriptionLst" ToolTip="ttp_length_class_description" Size="70,20" visible="0" loadedclick="1">
+	<DbDetails fcsm="1">
+<DbTable>freshlime.length_class_description</DbTable>
+<Index>length_class_id</Index>
+<Data>language_id,title,unit,length_class_id</Data>
+<Order>language_id,length_class_id</Order></DbDetails>
+<OnClick><assign name="length_class_id[length_class_id]" expr="%{length_class_descriptionLst[length_class_id]}" function="SetSel"/>
+<if cond="%{length_class_id}"><SetVisible name="insertlength_class_description" Visible="0"/><SetVisible name="modifylength_class_description" Visible="1"/></if>
+</OnClick>
+</ListCtrl>
+</Ctrls></GroupBox>

@@ -1,0 +1,17 @@
+﻿<GroupBox cols="xs12 sm12 md12 lg12" Name="GBOPVreturn_action" Size="100,100"><Ctrls>
+<Button Text="delete" ToolTip="ttp_deletereturn_action" Name="deletereturn_action" Size="50,20">
+	<OnClick>
+	<DbDetails fcsm="1">
+<DbTable>freshlime.return_action</DbTable>
+<Where>language_id='%{return_actionLst[language_id]}' and return_action_id='%{return_actionLst[return_action_id]}'</Where>
+<queryFormat>delete from %{table} where %{where}</queryFormat></DbDetails>
+	<submit namelist="DbDetails"/><submit next="searchreturn_action" function="click"/>
+	</OnClick>
+	</Button><TAB/>
+<Button Text="refresh" ToolTip="ttp_refreshreturn_action" Name="searchreturn_action" Size="50,20">
+			  <OnClick><submit next="return_actionLst"/>	</OnClick>
+</Button>
+<TAB/><TAB/><Button Text="firstpage" Name="FPreturn_actionLst" OnClick="(return_actionLst)GetPage(First)" Size="50,20"/>
+<TAB/><Button Text="prepage" Name="PREreturn_actionLst" OnClick="(return_actionLst)GetPage(Pre)" Size="50,20"/>
+<TAB/><Button Text="nextpage" Name="NPreturn_actionLst" OnClick="(return_actionLst)GetPage(Next)" Size="50,20"/>
+</Ctrls></GroupBox>

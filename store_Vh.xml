@@ -1,0 +1,12 @@
+<GroupBox Name="GBDVstore" cols="xs12 sm12 md12 lg12" visible="0"><Ctrls>
+<ListCtrl Name="storeLst" ToolTip="ttp_store" Size="70,20" visible="0" loadedclick="1">
+	<DbDetails fcsm="1">
+<DbTable>freshlime.store</DbTable>
+<Index>store_id</Index>
+<Data>name,address,store_id</Data>
+<Order>store_id</Order></DbDetails>
+<OnClick>
+<if cond="%{store_id}"><SetVisible name="insertstore" Visible="0"/><SetVisible name="modifystore" Visible="1"/></if>
+</OnClick>
+</ListCtrl>
+</Ctrls></GroupBox>

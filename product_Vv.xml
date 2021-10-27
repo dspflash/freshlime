@@ -1,0 +1,18 @@
+<GroupBox Name="GBDVproduct" cols="xs12 sm12 md12 lg12"><Ctrls>
+<ListCtrl Name="product_vLst" ToolTip="ttp_product" Size="700,420" OnLoad="init" Heading="product_name,100;manufacturer_id,120;status,60;upc,60;sku,320;price,75;quantity,20;minimum,55;date_available,150;weight,75;weight_class_id,120;length,75;width,75;height,75;length_class_id,120;date_added,150;date_modified,150;model,320;location,640;stock_status_id,55;image,640;shipping,60;points,40;tax_class_id,120;subtract,60;sort_order,55;viewed,25;product_id,55;" loadedclick="0">
+	<DbDetails >
+<DbTable>freshlime.product p left join freshlime.manufacturer m on p.manufacturer_id=m.manufacturer_id left join freshlime.weight_class_description w on p.weight_class_id=w.weight_class_id left join freshlime.length_class_description l on p.length_class_id=l.length_class_id left join freshlime.stock_status s on p.stock_status_id=s.stock_status_id left join freshlime.tax_class t on p.tax_class_id=t.tax_class_id</DbTable>
+<Index>product_id</Index>
+<Data>p.product_name,m.name manufacturer_id,p.status,p.upc,p.sku,p.price,p.quantity,p.minimum,p.date_available,p.weight,w.title weight_class_id,p.length,p.width,p.height,l.title length_class_id,p.date_added,p.date_modified,p.model,p.location,s.name stock_status_id,p.image,p.shipping,p.points,t.title tax_class_id,p.subtract,p.sort_order,p.viewed,p.product_id</Data>
+<Order>product_id</Order></DbDetails>
+<operator refresh="1" firstpage="1" prepage="1" nextpage="1">
+<op text="modify"><DbDetails><Where>product_id='%{product_vLst[product_id]}'</Where></DbDetails><submit namelist="DbDetails" next="$this.product.productLst"/></op>
+<op text="IssueReceipt"><DbDetails><Where>product_id='%{product_vLst[product_id]}'</Where></DbDetails><submit namelist="DbDetails" next="$this.product_to_store.product_id"/></op>
+<op text="delete" needconfirm="1"><DbDetails>
+<DbTable>freshlime.product</DbTable>
+<Where>product_id='%{product_vLst[product_id]}'</Where>
+<queryFormat>delete from %{table} where %{where}</queryFormat></DbDetails>
+<submit namelist="DbDetails"/><submit/></op>
+</operator>
+</ListCtrl>
+</Ctrls></GroupBox>

@@ -1,0 +1,12 @@
+﻿<GroupBox Name="GBDVreturn_reason" cols="xs12 sm12 md12 lg12" visible="0"><Ctrls>
+<ListCtrl Name="return_reasonLst" ToolTip="ttp_return_reason" Size="70,20" visible="0" loadedclick="1">
+	<DbDetails fcsm="1">
+<DbTable>freshlime.return_reason</DbTable>
+<Index>return_reason_id</Index>
+<Data>name,language_id,return_reason_id</Data>
+<Order>language_id,return_reason_id</Order></DbDetails>
+<OnClick>
+<if cond="%{return_reason_id}"><SetVisible name="insertreturn_reason" Visible="0"/><SetVisible name="modifyreturn_reason" Visible="1"/></if>
+</OnClick>
+</ListCtrl>
+</Ctrls></GroupBox>

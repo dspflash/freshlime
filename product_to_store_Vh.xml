@@ -1,0 +1,12 @@
+﻿<GroupBox Name="GBDVproduct_to_store" cols="xs12 sm12 md12 lg12" visible="0"><Ctrls>
+<ListCtrl Name="product_to_storeLst" ToolTip="ttp_product_to_store" Size="70,20" visible="0" loadedclick="1">
+	<DbDetails fcsm="1">
+<DbTable>freshlime.product_to_store</DbTable>
+<Index>idx</Index>
+<Data>product_id,store_id,typeattach,idattach,quantityact,price,idx</Data>
+<Order>idx</Order></DbDetails>
+<OnClick><assign name="product_id[product_id]" expr="%{product_to_storeLst[product_id]}" function="SetSel"/><assign name="typeattach[id_type]" expr="%{product_to_storeLst[typeattach]}" function="SetSel"/>
+<if cond="%{idx}"><SetVisible name="insertproduct_to_store" Visible="0"/><SetVisible name="modifyproduct_to_store" Visible="1"/></if>
+</OnClick>
+</ListCtrl>
+</Ctrls></GroupBox>

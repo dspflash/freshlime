@@ -1,0 +1,12 @@
+<GroupBox Name="GBDVorder" cols="xs12 sm12 md12 lg12" visible="0"><Ctrls>
+<ListCtrl Name="orderLst" ToolTip="ttp_order" Size="70,20" visible="0" loadedclick="1">
+	<DbDetails fcsm="1">
+<DbTable>freshlime.order</DbTable>
+<Index>order_id</Index>
+<Data>customer_id,invoice_prefix,order_status_id,customer_group_id,email,telephone,fax,date_added,date_modified,comment,store_id,invoice_no,store_name,store_url,shipping_firstname,shipping_lastname,shipping_company,shipping_address_1,shipping_address_2,shipping_city,shipping_postcode,shipping_country,shipping_country_id,shipping_zone,shipping_zone_id,shipping_address_format,shipping_method,shipping_code,payment_firstname,payment_lastname,payment_company,payment_address_1,payment_address_2,payment_city,payment_postcode,payment_country,payment_country_id,payment_zone,payment_zone_id,payment_address_format,payment_method,payment_code,total,affiliate_id,commission,language_id,currency_id,currency_code,currency_value,ip,forwarded_ip,user_agent,accept_language,order_id</Data>
+<Order>order_id</Order></DbDetails>
+<OnClick><assign name="customer_id[customer_id]" expr="%{orderLst[customer_id]}" function="SetSel"/><assign name="order_status_id[order_status_id]" expr="%{orderLst[order_status_id]}" function="SetSel"/><assign name="customer_group_id[customer_group_id]" expr="%{orderLst[customer_group_id]}" function="SetSel"/>
+<if cond="%{order_id}"><SetVisible name="insertorder" Visible="0"/><SetVisible name="modifyorder" Visible="1"/></if>
+</OnClick>
+</ListCtrl>
+</Ctrls></GroupBox>
